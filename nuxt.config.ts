@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxtjs/tailwindcss',
-    'shadcn-nuxt'
+    'shadcn-nuxt',
+    '@nuxt/icon'
   ],
   shadcn: {
     /**
