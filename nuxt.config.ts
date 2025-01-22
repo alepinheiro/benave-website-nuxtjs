@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@nuxt/icon',
     '@nuxtjs/i18n',
+    'nuxt-swiper',
   ],
   shadcn: {
     /**
@@ -28,4 +29,3 @@ export default defineNuxtConfig({
     locales: [{ code: 'br', language: 'pt-BR' }],
   },
 });
-
