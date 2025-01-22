@@ -1,5 +1,4 @@
 <template>
-  <div>página inicial</div>
   <HomeHeroSection />
 </template>
 

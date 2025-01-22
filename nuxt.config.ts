@@ -8,7 +8,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/i18n',
   ],
   shadcn: {
     /**
@@ -19,6 +20,12 @@ export default defineNuxtConfig({
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './components/ui'
-  }
-})
+    componentDir: './components/ui',
+  },
+  i18n: {
+    defaultLocale: 'br',
+    vueI18n: './i18n.config.ts',
+    locales: [{ code: 'br', language: 'pt-BR' }],
+  },
+});
+
