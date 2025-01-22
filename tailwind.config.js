@@ -95,6 +95,9 @@ module.exports = {
         'collapsible-up': 'collapsible-up 0.2s ease-in-out',
       },
     },
+    fontFamily: {
+      plusJakartaSans: ['Plus Jakarta Sans'],
+    },
   },
   plugins: [animate],
 };

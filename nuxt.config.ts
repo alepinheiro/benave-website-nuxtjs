@@ -28,4 +28,8 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
     locales: [{ code: 'br', language: 'pt-BR' }],
   },
+  fonts: {
+    provider: 'google',
+  },
 });
+
