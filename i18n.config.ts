@@ -73,6 +73,32 @@ const pages = {
         },
       },
     },
+    portfolio: {
+      title: 'PORTFÓLIO',
+      tagline: 'CONHEÇA OS CASES DE SUCESSO BENAVÊ',
+      cases: {
+        1: {
+          img: 'http://unsplash.it/900/600?random=13&gravity=center',
+          title: 'Quadro Geral de Baixa Tensão',
+        },
+        2: {
+          img: 'http://unsplash.it/900/600?random=14&gravity=center',
+          title: 'Quadro de Distribuição de Tomadas',
+        },
+        3: {
+          img: 'http://unsplash.it/900/600?random=15&gravity=center',
+          title: 'Quadro de Distribuição de Luz',
+        },
+        4: {
+          img: 'http://unsplash.it/900/600?random=16&gravity=center',
+          title: 'Quadro de Transf. Automática',
+        },
+        5: {
+          img: 'http://unsplash.it/900/600?random=17&gravity=center',
+          title: 'Quadro de Tomada Monofásico',
+        },
+      },
+    },
   },
 };
 

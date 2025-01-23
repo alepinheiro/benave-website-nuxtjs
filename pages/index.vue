@@ -7,6 +7,7 @@
     <HomeHeroSection />
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
+    <LazyHomeThePortfolio />
   </main>
 </template>
 
