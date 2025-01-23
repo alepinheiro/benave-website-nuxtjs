@@ -1,7 +1,6 @@
 <template>
   <div class="bg-smalt p-5 pt-12">
-    <h1
-      class="font-plusJakartaSans py-8 text-center text-xl leading-5 text-white">
+    <h1 class="py-8 text-center text-xl leading-5 text-white">
       {{ $t('pages.home.heroSection.title') }}
     </h1>
     <div class="-mx-5 h-72">
@@ -37,13 +36,12 @@
       </ClientOnly>
     </div>
 
-    <h2
-      class="font-plusJakartaSans py-8 text-center text-xl leading-5 text-white">
+    <h2 class="py-8 text-center text-xl leading-5 text-white">
       {{ $t('pages.home.heroSection.subtitle') }}
       <b>{{ $t('pages.home.heroSection.subtitleBold') }}</b>
     </h2>
 
-    <div class="mx-auto flex w-2/3 flex-row justify-between">
+    <div class="mx-auto flex w-full flex-row justify-between">
       <Button>
         {{ $t('pages.home.heroSection.aboutUs') }}
       </Button>
