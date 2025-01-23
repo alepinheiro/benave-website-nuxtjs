@@ -24,6 +24,13 @@ const pages = {
       },
       cta: 'Entrar em contato',
     },
+    services: {
+      title: 'Nossos Serviços',
+      electricPanels: {
+        summary:
+          'Concepção e detalhamento do conjunto de componentes que garantem o controle e distribuição eficiente de energia elétrica, sempre seguindo rigorosamente as normas técnicas.',
+      },
+    },
   },
 };
 
