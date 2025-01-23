@@ -27,8 +27,50 @@ const pages = {
     services: {
       title: 'Nossos Serviços',
       electricPanels: {
+        title: {
+          prefix: 'Projetos de',
+          suffix: 'painéis elétricos',
+        },
+        img: 'http://unsplash.it/900/600?random=10&gravity=center',
         summary:
           'Concepção e detalhamento do conjunto de componentes que garantem o controle e distribuição eficiente de energia elétrica, sempre seguindo rigorosamente as normas técnicas.',
+        services: {
+          QGBT: 'Quadro Geral de Baixa Tensão',
+          CCM: 'Centro de Controle de Motores',
+          QTA: 'Quadro de Transf. Automática',
+          QTM: 'Quadro de Tomada Monofásico',
+          QDL: 'Quadro de Distribuição de Luz',
+          QDT: 'Quadro de Distrib. de Tomadas',
+        },
+      },
+      electricProjects: {
+        title: {
+          prefix: 'Projetos',
+          suffix: 'Elétricos',
+        },
+        img: 'http://unsplash.it/900/600?random=11&gravity=center',
+        summary:
+          'Desenho técnico e planejamento de todas as informações pertinentes e necessárias para a execução da obra, elaborado em software BIM, garantindo eficiência e precisão.',
+        services: {
+          1: 'Luminotécnico',
+          2: 'Aterramento',
+          3: 'Sistema de Proteção contra Descargas Atmosféricas (SPDA)',
+          4: 'Bandejamento e diagrama de interligação',
+        },
+      },
+      memorialDescription: {
+        title: {
+          prefix: 'Memorial',
+          suffix: 'de Cálculo',
+        },
+        img: 'http://unsplash.it/900/600?random=12&gravity=center',
+        summary:
+          'Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.',
+        services: {
+          1: 'Cabos elétricos e condutores',
+          2: 'Sistema de Proteção contra Descargas Atmosféricas (SPDA)',
+          3: 'Sistemas luminotécnicos',
+        },
       },
     },
   },
