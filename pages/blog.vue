@@ -16,7 +16,7 @@
 
     <div class="flex w-full items-center p-2">
       <ClientOnly>
-        <div v-if="pending">Carregando...</div>
+        <div v-if="status === 'pending'">Carregando...</div>
         <div v-else-if="error">Erro: {{ error }}</div>
         <div v-else class="flex max-w-xl flex-col gap-2">
           <Card v-for="post of posts" :key="post.id">
@@ -45,5 +45,5 @@
 </template>
 
 <script setup lang="ts">
-  const { data: posts, pending, error } = await usePosts();
+  const { data: posts, status, error } = await usePosts();
 </script>

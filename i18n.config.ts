@@ -99,6 +99,10 @@ const pages = {
         },
       },
     },
+    blog: {
+      title: 'BLOG',
+      tagline: 'Fique por dentro das últimas notícias e insights',
+    },
   },
 };
 

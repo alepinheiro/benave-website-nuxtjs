@@ -8,6 +8,7 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
+    <LazyHomeTheBLog />
   </main>
 </template>
 

@@ -30,8 +30,6 @@
             slideShadows: false,
             scale: 0.85,
           }">
-          <!-- <div class="swiper-button-prev">⬅️</div>
-          <div class="swiper-button-next">➡️</div> -->
           <swiper-slide v-for="(slide, idx) in [1, 2, 3, 4, 5]" :key="idx">
             <div class="flex h-72 flex-col gap-8">
               <NuxtImg
