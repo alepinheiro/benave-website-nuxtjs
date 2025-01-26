@@ -103,6 +103,25 @@ const pages = {
       title: 'BLOG',
       tagline: 'Fique por dentro das últimas notícias e insights',
     },
+    testimonials: {
+      title: 'EXPERIÊNCIAS QUE INSPIRAM CONFIANÇA',
+      1: {
+        img: 'http://unsplash.it/900/600?random=18&gravity=center',
+        name: 'Robson',
+        company: 'Artesian',
+        job: 'Gerente de produção',
+        quote:
+          'Tive uma boa experiência com os serviços prestados e a agilidade foi o ponto positivo mais relevante nesta parceria. Sem dúvidas, eu recomendaria a Benavê para outros colegas.',
+      },
+      2: {
+        img: 'http://unsplash.it/900/600?random=19&gravity=center',
+        name: 'Geferson Bachi',
+        company: 'GB Instalações e manutenções elétricas',
+        job: 'Proprietário',
+        quote:
+          'O atendimento e atenção dispensada causou uma ótima impressão, sempre disposto a ajudar e tirar dúvidas, facilitando a execução do projeto, que teve um ótimo resultado. Agregou muito no desenvolvimento e execução do trabalho.',
+      },
+    },
   },
 };
 
