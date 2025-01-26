@@ -122,6 +122,100 @@ const pages = {
           'O atendimento e atenção dispensada causou uma ótima impressão, sempre disposto a ajudar e tirar dúvidas, facilitando a execução do projeto, que teve um ótimo resultado. Agregou muito no desenvolvimento e execução do trabalho.',
       },
     },
+    callToAction: {
+      1: {
+        title:
+          'Precisa de um parceiro confiável para o seu projeto elétrico? Fale com um de nossos especialistas.',
+        tagline:
+          'Faça seu orçamento agora e transforme a necessidade em soluções eficientes.',
+        email: "contato{'@'}benave.com.br",
+        phone: '47 9 8893-4935',
+      },
+    },
+    footer: {
+      logo: 'http://unsplash.it/900/600?random=20&gravity=center',
+      tagline:
+        'Projetos elétricos de alta performance para um mundo em constante movimento.',
+      about: {
+        title: 'Sobre',
+        links: {
+          1: {
+            label: 'Política de Privacidade',
+            url: '#',
+          },
+          2: {
+            label: 'Termos de Uso',
+            url: '#',
+          },
+          3: {
+            label: 'Política de cookies',
+            url: '#',
+          },
+          4: {
+            label: 'Acessibilidade',
+            url: '#',
+          },
+        },
+      },
+      sitemap: {
+        title: 'Links úteis',
+        links: {
+          1: {
+            label: 'Início',
+            url: '#',
+          },
+          2: {
+            label: 'Sobre',
+            url: '#',
+          },
+          3: {
+            label: 'Serviços',
+            url: '#',
+          },
+          4: {
+            label: 'Portfólio',
+            url: '#',
+          },
+          5: {
+            label: 'Contato',
+            url: '#',
+          },
+        },
+      },
+      social: {
+        title: 'Siga-nos nas redes sociais:',
+        links: {
+          1: {
+            label: 'WhatsApp',
+            icon: 'mdi-whatsapp',
+            url: '#',
+          },
+          2: {
+            label: 'Instagram',
+            icon: 'mdi-instagram',
+            url: '#',
+          },
+          3: {
+            label: 'LinkedIn',
+            icon: 'mdi-linkedin',
+            url: '#',
+          },
+        },
+      },
+      businessInfo: {
+        title: 'Horário de atendimento:',
+        openTime: {
+          weekDays: 'Segunda a Sexta-feira',
+          open: 'Das 08h às 12h',
+          close: 'e das 13h às 18h.',
+        },
+      },
+      legalInfo: {
+        socialReason: 'PABLO YURI BENAVENUTO DOS SANTOS 46.552.830/0001-22',
+        year: '{year} © BENAVÊ. Todos os direitos reservados.',
+        lgpd: 'Leia nosso Aviso de Privacidade e a Política de Cookies.',
+      },
+    },
   },
 };
 

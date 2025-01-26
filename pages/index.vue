@@ -10,6 +10,8 @@
     <LazyHomeThePortfolio />
     <LazyHomeTheBlog />
     <LazyHomeTheTestimonials />
+    <LazyHomeCallToAction />
+    <LazyHomeTheFooter />
   </main>
 </template>
 
