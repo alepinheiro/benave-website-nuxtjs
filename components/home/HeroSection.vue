@@ -42,10 +42,10 @@
     </h2>
 
     <div class="mx-auto flex w-full flex-row justify-between">
-      <Button>
+      <Button variant="inverted">
         {{ $t('pages.home.heroSection.aboutUs') }}
       </Button>
-      <Button>
+      <Button variant="outline">
         {{ $t('pages.home.heroSection.contactUs') }}
       </Button>
     </div>

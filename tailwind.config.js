@@ -76,6 +76,7 @@ module.exports = {
           900: '#034694',
           950: '#082f63',
           DEFAULT: '#034694',
+          foreground: '#D9D9D9',
         },
       },
       borderRadius: {
