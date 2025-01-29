@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-smalt p-5 py-12">
+  <section class="bg-primary p-5 py-12">
     <h1 class="py-8 text-center text-xl leading-5 text-white">
       {{ $t('pages.home.heroSection.title') }}
     </h1>
