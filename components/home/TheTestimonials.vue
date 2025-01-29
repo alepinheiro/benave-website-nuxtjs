@@ -1,12 +1,13 @@
 <template>
   <section class="py-12">
-    <h2>
+    <h2 class="mx-auto w-3/4 text-center text-xl font-extrabold text-primary">
       {{ $t('pages.home.testimonials.title') }}
     </h2>
-    <div>
+
+    <div class="px-5 pt-6">
       <ClientOnly>
         <swiper-container
-          class="h-72"
+          class=""
           :loop="true"
           :effect="'coverflow'"
           :autoplay="true"
@@ -28,29 +29,30 @@
             slideShadows: false,
             scale: 0.85,
           }">
-          <swiper-slide v-for="(slide, idx) in [1, 2]" :key="idx">
-            <article class="flex flex-col gap-8 bg-smalt p-5 text-white">
-              <div class="flex flex-row gap-5">
+          <swiper-slide v-for="(slide, idx) in [1, 2]" :key="idx" class="mb-16">
+            <article
+              class="flex h-full flex-col justify-center gap-8 rounded-2xl bg-primary p-5 text-white">
+              <div class="flex flex-row items-center gap-2">
                 <NuxtImg
                   :src="$t('pages.home.testimonials.' + slide + '.img')"
                   height="80"
                   width="80"
-                  class="h-20 w-20 rounded-full object-cover" />
-                <div class="flex flex-col">
-                  <h4 class="">
+                  class="h-12 w-12 rounded-full object-cover" />
+                <div class="flex flex-col overflow-hidden">
+                  <h4 class="truncate text-xl font-bold">
                     {{ $t('pages.home.testimonials.' + slide + '.name') }}
                   </h4>
-                  <p>
+                  <p class="truncate text-sm">
                     {{ $t('pages.home.testimonials.' + slide + '.job') }}
                   </p>
-                  <p>
+                  <p class="truncate text-sm">
                     {{ $t('pages.home.testimonials.' + slide + '.company') }}
                   </p>
                 </div>
               </div>
-              <div class="flex flex-row gap-5">
-                <div class="h-12 w-12">
-                  <Icon name="ri:double-quotes-l" height="80" width="80" />
+              <div class="flex flex-row gap-1">
+                <div class="h-12 w-12 shrink-0">
+                  <Icon name="ri:double-quotes-l" class="h-full w-full" />
                 </div>
                 <p>
                   {{ $t('pages.home.testimonials.' + slide + '.quote') }}
@@ -60,9 +62,17 @@
           </swiper-slide>
           <div
             slot="container-end"
-            class="absolute bottom-0 z-10 flex w-full -translate-y-1/2 justify-between">
-            <div class="swiper-button-prev">⬅️</div>
-            <div class="swiper-button-next">➡️</div>
+            class="absolute -bottom-0 z-10 flex w-full -translate-y-1/2 justify-between">
+            <div class="swiper-button-prev">
+              <Icon
+                name="tabler:arrow-left"
+                class="h-6 w-6 shrink-0 text-primary-500" />
+            </div>
+            <div class="swiper-button-next">
+              <Icon
+                name="tabler:arrow-right"
+                class="h-6 w-6 shrink-0 text-primary-500" />
+            </div>
           </div>
         </swiper-container>
       </ClientOnly>
