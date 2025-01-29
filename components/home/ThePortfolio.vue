@@ -1,9 +1,17 @@
 <template>
-  <section class="bg-smalt py-24">
-    <h2>
-      {{ $t('pages.home.portfolio.title') }}
-    </h2>
-    <h3>
+  <section class="bg-primary py-12">
+    <div class="flex flex-row items-center justify-center gap-2">
+      <NuxtImg height="27" width="20" src="/img/logo-benave.png" />
+      <div class="flex w-fit flex-col">
+        <h2
+          class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-center text-2xl font-bold text-transparent">
+          {{ $t('pages.home.portfolio.title') }}
+        </h2>
+        <div class="h-1 bg-primary-600"></div>
+      </div>
+    </div>
+
+    <h3 class="py-6 text-center text-xl font-bold text-white">
       {{ $t('pages.home.portfolio.tagline') }}
     </h3>
     <div class="mx-5 h-72">
@@ -30,14 +38,15 @@
             slideShadows: false,
             scale: 0.85,
           }">
-          <swiper-slide v-for="(slide, idx) in [1, 2, 3, 4, 5]" :key="idx">
+          <swiper-slide v-for="(slide, idx) in [1, 2, 3, 4]" :key="idx">
             <div class="flex h-72 flex-col gap-8">
               <NuxtImg
                 :src="$t('pages.home.portfolio.cases.' + slide + '.img')"
-                height="300"
+                height="600"
                 width="300"
-                class="h-48 w-full rounded-3xl object-cover" />
-              <h4 class="mx-auto w-3/4 text-center text-lg leading-5">
+                class="h-72 w-full rounded-3xl object-cover" />
+              <h4
+                class="mx-auto w-3/4 text-center text-lg font-bold leading-5 text-white">
                 {{ $t('pages.home.portfolio.cases.' + slide + '.title') }}
               </h4>
             </div>
@@ -45,8 +54,16 @@
           <div
             slot="container-end"
             class="absolute bottom-0 z-10 flex w-full -translate-y-1/2 justify-between">
-            <div class="swiper-button-prev">⬅️</div>
-            <div class="swiper-button-next">➡️</div>
+            <div class="swiper-button-prev">
+              <Icon
+                name="tabler:arrow-left"
+                class="h-6 w-6 shrink-0 text-primary-500" />
+            </div>
+            <div class="swiper-button-next">
+              <Icon
+                name="tabler:arrow-right"
+                class="h-6 w-6 shrink-0 text-primary-500" />
+            </div>
           </div>
         </swiper-container>
       </ClientOnly>
