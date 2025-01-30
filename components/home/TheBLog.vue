@@ -1,7 +1,7 @@
 <template>
   <section class="px-5 py-12">
     <div class="flex flex-row items-center justify-center gap-2 text-primary">
-      <TheLogo class="h-10 w-8" />
+      <TheLogo type="icon" class="h-10 w-8" />
       <h2 class="border-b-2 border-primary text-xl font-bold">
         {{ $t('pages.home.blog.title') }}
       </h2>
