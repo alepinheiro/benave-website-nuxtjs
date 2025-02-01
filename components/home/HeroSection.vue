@@ -1,5 +1,6 @@
 <template>
-  <section class="relative h-[80vh] overflow-hidden bg-primary p-5 py-12">
+  <section
+    class="relative overflow-hidden bg-primary p-5 py-12 md:h-auto lg:h-[80vh]">
     <div class="mx-auto flex h-full max-w-7xl flex-col md:flex-row md:pt-24">
       <h1 class="py-8 text-center text-xl leading-5 text-white md:hidden">
         {{ $t('pages.home.heroSection.title') }}

@@ -1,29 +1,39 @@
 <template>
   <section class="relative z-0 pb-12">
-    <NuxtImg
-      src="/img/about-featured.png"
-      height="200"
-      width="300"
-      class="relative z-0 h-48 w-full object-cover" />
-
-    <div class="relative z-10 w-10/12">
+    <div
+      class="mx-auto flex w-full max-w-7xl flex-col gap-5 md:flex-row md:py-12">
       <NuxtImg
-        src="/img/about-logo.png"
-        height="160"
-        width="900"
-        class="h-fit w-full" />
-    </div>
+        src="/img/about-featured.png"
+        height="200"
+        width="300"
+        class="relative z-0 h-48 w-full object-cover md:hidden" />
+      <NuxtImg
+        src="/img/about-featured.png"
+        height="600"
+        width="600"
+        class="relative z-0 hidden h-full w-1/3 rounded-2xl object-cover md:block" />
 
-    <div class="-mt-10 flex flex-col gap-2 p-2 px-5 text-primary">
-      <div>
-        <h3 class="font-bold">
-          {{ $t('pages.home.aboutUs.tagline') }}
-        </h3>
-        <h2 class="text-2xl font-bold uppercase">
-          {{ $t('pages.home.aboutUs.companyName') }}
-        </h2>
+      <div class="flex flex-col md:w-3/4">
+        <div class="relative z-10 w-10/12">
+          <NuxtImg
+            src="/img/about-logo.png"
+            height="160"
+            width="900"
+            class="h-fit w-full md:w-3/4" />
+        </div>
+
+        <div class="-mt-10 flex w-full flex-col gap-2 p-2 px-5 text-primary">
+          <div>
+            <h3 class="font-bold">
+              {{ $t('pages.home.aboutUs.tagline') }}
+            </h3>
+            <h2 class="text-2xl font-bold uppercase">
+              {{ $t('pages.home.aboutUs.companyName') }}
+            </h2>
+          </div>
+          <div class="w-full" v-html="$t('pages.home.aboutUs.summary')"></div>
+        </div>
       </div>
-      <p v-html="$t('pages.home.aboutUs.summary')"></p>
     </div>
   </section>
   <div class="radial-gradient p-2 py-10">
