@@ -1,7 +1,7 @@
 <template>
   <section class="relative z-0 pb-12">
     <div
-      class="mx-auto flex w-full max-w-7xl flex-col gap-5 md:flex-row md:py-12">
+      class="mx-auto flex w-full max-w-7xl flex-col gap-5 px-5 md:flex-row md:py-12">
       <NuxtImg
         src="/img/about-featured.png"
         height="200"
@@ -19,7 +19,7 @@
             src="/img/about-logo.png"
             height="160"
             width="900"
-            class="h-fit w-full md:w-3/4" />
+            class="h-fit w-full md:h-full md:w-3/4" />
         </div>
 
         <div class="-mt-10 flex w-full flex-col gap-2 p-2 px-5 text-primary">
@@ -38,28 +38,24 @@
   </section>
   <div class="radial-gradient p-2 py-10">
     <div class="mx-auto flex w-3/4 flex-col gap-5">
-      <h3 class="text-center text-xl leading-5 text-primary">
+      <h3 class="text-center text-2xl leading-5 text-primary">
         {{ $t('pages.home.aboutUs.valueProposition.prefix') }}
-        <br />
+        <br class="md:hidden" />
         <b>
           {{ $t('pages.home.aboutUs.valueProposition.name') }}
         </b>
       </h3>
-      <div>
-        <ul class="grid grid-rows-4 gap-4">
-          <li
-            v-for="item of [1, 2, 3, 4]"
-            :key="item"
-            class="flex rounded-2xl bg-zinc-800 p-4 text-white">
-            <p class="my-auto w-full text-center text-sm">
-              {{ $t('pages.home.aboutUs.valueProposition.highlights.' + item) }}
-            </p>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="flex w-full pt-10">
+      <ul
+        class="grid grid-rows-4 gap-4 md:grid-cols-2 md:grid-rows-1 lg:mx-auto lg:max-w-xl">
+        <li
+          v-for="item of [1, 2, 3, 4]"
+          :key="item"
+          class="flex rounded-2xl bg-zinc-800 p-4 text-white">
+          <p class="my-auto w-full text-center text-lg">
+            {{ $t('pages.home.aboutUs.valueProposition.highlights.' + item) }}
+          </p>
+        </li>
+      </ul>
       <Button class="mx-auto">
         {{ $t('pages.home.aboutUs.cta') }}
       </Button>
