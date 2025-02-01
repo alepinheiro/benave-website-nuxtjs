@@ -4,12 +4,11 @@
       {{ $t('pages.home.testimonials.title') }}
     </h2>
 
-    <div class="px-5 pt-6">
+    <div class="px-5 pt-6 md:mx-auto md:max-w-5xl">
       <ClientOnly>
         <swiper-container
           class=""
           :loop="true"
-          :effect="'coverflow'"
           :autoplay="true"
           :autoHeight="false"
           :initialSlide="2"
@@ -17,6 +16,13 @@
           :pagination="true"
           :slidesPerView="1"
           :centeredSlides="true"
+          :breakpoints="{
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 15,
+              centeredSlides: false,
+            },
+          }"
           :navigation="{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -29,7 +35,10 @@
             slideShadows: false,
             scale: 0.85,
           }">
-          <swiper-slide v-for="(slide, idx) in [1, 2]" :key="idx" class="mb-16">
+          <swiper-slide
+            v-for="(slide, idx) in [1, 2, 1, 2, 1, 2]"
+            :key="idx"
+            class="mb-16">
             <article
               class="flex h-full flex-col justify-center gap-8 rounded-2xl bg-primary p-5 text-white">
               <div class="flex flex-row items-center gap-2">
