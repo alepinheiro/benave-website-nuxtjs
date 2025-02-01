@@ -1,11 +1,23 @@
 <template>
   <section>
-    <div class="bg-primary px-5 py-12">
-      <h2 class="text-center text-2xl font-bold text-white">
-        {{ $t('pages.home.callToAction.1.title') }}
-      </h2>
+    <div class="gap-2 bg-primary px-5 py-12">
+      <div
+        class="mx-auto flex max-w-7xl flex-row md:items-center md:justify-around">
+        <div class="flex w-1/2 flex-col items-start">
+          <h2 class="text-center text-2xl font-bold text-white md:text-start">
+            {{ $t('pages.home.callToAction.1.title') }}
+          </h2>
+          <Button variant="ghost" class="md:text-white">
+            {{ $t('pages.home.callToAction.1.email') }}
+          </Button>
+        </div>
+        <Button variant="inverted">
+          {{ $t('pages.home.callToAction.1.phone') }}
+        </Button>
+      </div>
     </div>
-    <div class="bg-gradient-to-t from-zinc-500 to-zinc-200 px-5 py-12">
+    <div
+      class="bg-gradient-to-t from-zinc-500 to-zinc-200 px-5 py-12 md:hidden">
       <div class="flex flex-col gap-5 rounded-xl bg-zinc-800 p-5 text-white">
         <h3 class="text-center text-xl font-bold">
           {{ $t('pages.home.callToAction.1.tagline') }}
