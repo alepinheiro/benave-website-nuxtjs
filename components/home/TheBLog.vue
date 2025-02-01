@@ -1,24 +1,39 @@
 <template>
   <section class="px-5 py-12">
-    <div class="flex flex-row items-center justify-center gap-2 text-primary">
-      <TheLogo type="icon" class="h-10 w-8" />
-      <h2 class="border-b-2 border-primary text-xl font-bold">
-        {{ $t('pages.home.blog.title') }}
-      </h2>
-    </div>
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row">
+      <div class="flex flex-col justify-around gap-2 md:items-start">
+        <div
+          class="flex flex-row items-center justify-center gap-2 text-primary">
+          <TheLogo type="icon" class="h-10 w-8" />
+          <h2 class="border-b-2 border-primary text-xl font-bold">
+            {{ $t('pages.home.blog.title') }}
+          </h2>
+        </div>
 
-    <h3 class="pt-4 font-bold">
-      {{ $t('pages.home.blog.tagline') }}
-    </h3>
+        <h3 class="pt-4 font-bold">
+          {{ $t('pages.home.blog.tagline') }}
+        </h3>
 
-    <ClientOnly>
-      <div v-if="status === 'pending'">Carregando...</div>
-      <div v-else-if="error">Erro: {{ error }}</div>
-      <div v-else class="flex max-w-xl flex-col gap-2 pt-4">
-        <BlogThePost v-if="posts" :post="posts[0]"> </BlogThePost>
-        <div v-else>nenhum post</div>
+        <p>
+          Esses temas destacam como a engenharia elétrica está conectada aos
+          avanços tecnológicos e mudanças sociais.
+        </p>
+
+        <Button>Acesse nosso Blog</Button>
       </div>
-    </ClientOnly>
+
+      <ClientOnly>
+        <div v-if="status === 'pending'">Carregando...</div>
+        <div v-else-if="error">Erro: {{ error }}</div>
+        <div
+          v-else
+          class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
+          <BlogThePost v-if="posts" :post="posts[0]"> </BlogThePost>
+          <BlogThePost v-if="posts" :post="posts[1]"> </BlogThePost>
+          <div v-else>nenhum post</div>
+        </div>
+      </ClientOnly>
+    </div>
   </section>
 </template>
 <script lang="ts" setup>

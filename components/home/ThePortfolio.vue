@@ -30,6 +30,11 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           }"
+          :breakpoints="{
+            768: {
+              slidesPerView: 3,
+            },
+          }"
           :coverflowEffect="{
             rotate: 0,
             stretch: 0,
