@@ -16,7 +16,7 @@ import { WPPost } from '../../types/wordPress';
 
       <CardFooter>
         <Button asChild>
-          <NuxtLink :to="`/posts/${post.slug}`"> Ler mais </NuxtLink>
+          <NuxtLink :to="`/blog/post/${post.slug}`"> Ler mais </NuxtLink>
         </Button>
       </CardFooter>
     </article>

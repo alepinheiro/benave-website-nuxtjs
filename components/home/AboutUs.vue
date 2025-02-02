@@ -11,7 +11,7 @@
         src="/img/about-featured.png"
         height="600"
         width="600"
-        class="relative z-0 hidden h-full w-1/3 rounded-2xl object-cover md:block" />
+        class="relative z-0 hidden h-full w-1/3 rounded-2xl object-cover md:block md:h-80" />
 
       <div class="flex flex-col md:w-3/4">
         <div class="relative z-10 w-10/12">
@@ -31,7 +31,9 @@
               {{ $t('pages.home.aboutUs.companyName') }}
             </h2>
           </div>
-          <div class="w-full" v-html="$t('pages.home.aboutUs.summary')"></div>
+          <div
+            class="w-full md:w-3/4"
+            v-html="$t('pages.home.aboutUs.summary')"></div>
         </div>
       </div>
     </div>
