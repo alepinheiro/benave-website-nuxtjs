@@ -31,7 +31,7 @@ const pages = {
           prefix: 'Projetos de',
           suffix: 'painéis elétricos',
         },
-        img: 'http://unsplash.it/900/600?random=10&gravity=center',
+        img: 'https://unsplash.it/900/600?random=10&gravity=center',
         summary:
           'Concepção e detalhamento do conjunto de componentes que garantem o controle e distribuição eficiente de energia elétrica, sempre seguindo rigorosamente as normas técnicas.',
         services: {
@@ -48,7 +48,7 @@ const pages = {
           prefix: 'Projetos',
           suffix: 'Elétricos',
         },
-        img: 'http://unsplash.it/900/600?random=11&gravity=center',
+        img: 'https://unsplash.it/900/600?random=11&gravity=center',
         summary:
           'Desenho técnico e planejamento de todas as informações pertinentes e necessárias para a execução da obra, elaborado em software BIM, garantindo eficiência e precisão.',
         services: {
@@ -63,7 +63,7 @@ const pages = {
           prefix: 'Memorial',
           suffix: 'de Cálculo',
         },
-        img: 'http://unsplash.it/900/600?random=12&gravity=center',
+        img: 'https://unsplash.it/900/600?random=12&gravity=center',
         summary:
           'Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.',
         services: {
@@ -78,23 +78,23 @@ const pages = {
       tagline: 'CONHEÇA OS CASES DE SUCESSO BENAVÊ',
       cases: {
         1: {
-          img: 'http://unsplash.it/900/600?random=13&gravity=center',
+          img: 'https://unsplash.it/900/600?random=13&gravity=center',
           title: 'Quadro Geral de Baixa Tensão',
         },
         2: {
-          img: 'http://unsplash.it/900/600?random=14&gravity=center',
+          img: 'https://unsplash.it/900/600?random=14&gravity=center',
           title: 'Quadro de Distribuição de Tomadas',
         },
         3: {
-          img: 'http://unsplash.it/900/600?random=15&gravity=center',
+          img: 'https://unsplash.it/900/600?random=15&gravity=center',
           title: 'Quadro de Distribuição de Luz',
         },
         4: {
-          img: 'http://unsplash.it/900/600?random=16&gravity=center',
+          img: 'https://unsplash.it/900/600?random=16&gravity=center',
           title: 'Quadro de Transf. Automática',
         },
         5: {
-          img: 'http://unsplash.it/900/600?random=17&gravity=center',
+          img: 'https://unsplash.it/900/600?random=17&gravity=center',
           title: 'Quadro de Tomada Monofásico',
         },
       },
@@ -106,7 +106,7 @@ const pages = {
     testimonials: {
       title: 'EXPERIÊNCIAS QUE INSPIRAM CONFIANÇA',
       1: {
-        img: 'http://unsplash.it/900/600?random=18&gravity=center',
+        img: 'https://unsplash.it/900/600?random=18&gravity=center',
         name: 'Robson',
         company: 'Artesian',
         job: 'Gerente de produção',
@@ -114,7 +114,7 @@ const pages = {
           'Tive uma boa experiência com os serviços prestados e a agilidade foi o ponto positivo mais relevante nesta parceria. Sem dúvidas, eu recomendaria a Benavê para outros colegas.',
       },
       2: {
-        img: 'http://unsplash.it/900/600?random=19&gravity=center',
+        img: 'https://unsplash.it/900/600?random=19&gravity=center',
         name: 'Geferson Bachi',
         company: 'GB Instalações e manutenções elétricas',
         job: 'Proprietário',
@@ -133,7 +133,7 @@ const pages = {
       },
     },
     footer: {
-      logo: 'http://unsplash.it/900/600?random=20&gravity=center',
+      logo: 'https://unsplash.it/900/600?random=20&gravity=center',
       tagline:
         'Projetos elétricos de alta performance para um mundo em constante movimento.',
       about: {
