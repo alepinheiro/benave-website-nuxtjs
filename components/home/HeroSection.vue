@@ -85,10 +85,10 @@
 
 <script setup lang="ts">
   const slides = [
-    'http://unsplash.it/1920/1080?random=1&gravity=center',
-    'http://unsplash.it/1920/1080?random=2&gravity=center',
-    'http://unsplash.it/1920/1080?random=3&gravity=center',
-    'http://unsplash.it/1920/1080?random=4&gravity=center',
-    'http://unsplash.it/1920/1080?random=5&gravity=center',
+    'https://unsplash.it/1920/1080?random=1&gravity=center',
+    'https://unsplash.it/1920/1080?random=2&gravity=center',
+    'https://unsplash.it/1920/1080?random=3&gravity=center',
+    'https://unsplash.it/1920/1080?random=4&gravity=center',
+    'https://unsplash.it/1920/1080?random=5&gravity=center',
   ];
 </script>
