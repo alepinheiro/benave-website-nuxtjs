@@ -1,4 +1,3 @@
-import { WPPost } from '../../types/wordPress';
 <template>
   <Card asChild>
     <article>
