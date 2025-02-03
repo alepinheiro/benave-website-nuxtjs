@@ -22,7 +22,7 @@
         <Button>Acesse nosso Blog</Button>
       </div>
 
-      <!-- <ClientOnly>
+      <ClientOnly>
         <div v-if="status === 'pending'">Carregando...</div>
         <div v-else-if="error">Erro: {{ error }}</div>
         <div
@@ -32,10 +32,11 @@
           <BlogThePost v-if="posts" :post="posts[1]"> </BlogThePost>
           <div v-else>nenhum post</div>
         </div>
-      </ClientOnly> -->
+      </ClientOnly>
     </div>
   </section>
 </template>
 <script lang="ts" setup>
   const { data: posts, status, error } = await usePosts();
+  console.log(posts);
 </script>
