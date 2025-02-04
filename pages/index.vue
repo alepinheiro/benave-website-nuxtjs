@@ -5,7 +5,9 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
-    <HomeTheBlog />
+    <ClientOnly>
+      <HomeTheBlog />
+    </ClientOnly>
     <LazyHomeTheTestimonials />
     <LazyHomeCallToAction />
     <LazyHomeTheFooter />
