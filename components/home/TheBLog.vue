@@ -22,20 +22,21 @@
         <Button>Acesse nosso Blog</Button>
       </div>
 
-      <ClientOnly>
-        <div v-if="status === 'pending'">Carregando...</div>
-        <div v-else-if="error">Erro: {{ error }}</div>
-        <div
-          v-else
-          class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
-          <BlogThePost v-if="data" :post="data[0]"> </BlogThePost>
-          <BlogThePost v-if="data" :post="data[1]"> </BlogThePost>
-          <div v-else>nenhum post</div>
-        </div>
-      </ClientOnly>
+      <div v-if="status === 'pending'">Carregando...</div>
+      <div v-else-if="error">Erro: {{ error }}</div>
+      <div
+        v-else
+        class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
+        <BlogThePost v-if="data" :post="data[0]"> </BlogThePost>
+        <BlogThePost v-if="data" :post="data[1]"> </BlogThePost>
+        <div v-else>nenhum post</div>
+      </div>
     </div>
   </section>
 </template>
 <script lang="ts" setup>
-  const { data, status, error } = await usePosts();
+  const { public: config } = useRuntimeConfig();
+  const { data, status, error } = await useFetch(config.blogUrl, {
+    server: false,
+  });
 </script>
