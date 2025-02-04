@@ -1,7 +1,7 @@
 <template>
   <section class="px-5 py-12">
     <div class="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row">
-      <div class="flex flex-col justify-around gap-2 md:items-start">
+      <!-- <div class="flex flex-col justify-around gap-2 md:items-start">
         <div
           class="flex flex-row items-center justify-center gap-2 text-primary">
           <TheLogo type="icon" class="h-10 w-8" />
@@ -20,8 +20,14 @@
         </p>
 
         <Button>Acesse nosso Blog</Button>
-      </div>
-      <ClientOnly>
+      </div> -->
+      <p class="text-red-500">
+        {{ data }}
+      </p>
+      <p class="text-primary-500">
+        {{ computedData }}
+      </p>
+      <!-- <ClientOnly>
         <div v-if="statusData === 'pending'">Carregando...</div>
         <div v-else-if="errorData">Erro: {{ errorData }}</div>
         <div
@@ -31,7 +37,7 @@
           <BlogThePost :post="computedPosts[1]"> </BlogThePost>
         </div>
         <div v-else>nenhum post</div>
-      </ClientOnly>
+      </ClientOnly> -->
     </div>
   </section>
 </template>
@@ -43,6 +49,7 @@
   const errorData = ref<any>();
   const statusData = ref<any>();
   const computedPosts = computed(() => posts.value);
+  const computedData = computed(() => data.value);
   // if (import.meta.client) {
   const { data, status, error } = await useFetch('/api/posts');
   posts.value = data.value;
