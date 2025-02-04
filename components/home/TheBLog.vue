@@ -43,10 +43,12 @@
   const errorData = ref<any>();
   const statusData = ref<any>();
   const computedPosts = computed(() => posts.value);
-  // if (import.meta.client) {
-  const { data, status, error } = await useFetch<Array<WPPost>>(config.blogUrl);
-  posts.value = data.value;
-  statusData.value = status.value;
-  errorData.value = error.value;
-  // }
+  if (import.meta.client) {
+    const { data, status, error } = await useFetch<Array<WPPost>>(
+      config.blogUrl,
+    );
+    posts.value = data.value;
+    statusData.value = status.value;
+    errorData.value = error.value;
+  }
 </script>
