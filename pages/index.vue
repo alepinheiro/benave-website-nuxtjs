@@ -5,8 +5,11 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
-    <ClientOnly>
+    <ClientOnly fallbackTag="span">
       <HomeTheBlog />
+      <template #fallback>
+        <p>Loading posts...</p>
+      </template>
     </ClientOnly>
     <LazyHomeTheTestimonials />
     <LazyHomeCallToAction />
