@@ -21,17 +21,17 @@
 
         <Button>Acesse nosso Blog</Button>
       </div>
-      <!-- <ClientOnly> -->
-      <div v-if="statusData === 'pending'">Carregando...</div>
-      <div v-else-if="errorData">Erro: {{ errorData }}</div>
-      <div
-        v-else-if="computedPosts"
-        class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
-        <BlogThePost :post="computedPosts[0]"> </BlogThePost>
-        <BlogThePost :post="computedPosts[1]"> </BlogThePost>
-      </div>
-      <div v-else>nenhum post</div>
-      <!-- </ClientOnly> -->
+      <ClientOnly>
+        <div v-if="statusData === 'pending'">Carregando...</div>
+        <div v-else-if="errorData">Erro: {{ errorData }}</div>
+        <div
+          v-else-if="computedPosts"
+          class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
+          <BlogThePost :post="computedPosts[0]"> </BlogThePost>
+          <BlogThePost :post="computedPosts[1]"> </BlogThePost>
+        </div>
+        <div v-else>nenhum post</div>
+      </ClientOnly>
     </div>
   </section>
 </template>
