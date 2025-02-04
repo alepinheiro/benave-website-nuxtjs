@@ -1,6 +1,6 @@
 import type { WPPost } from '~/types/wordPress';
 
-export const usePosts = () =>
+export const usePosts = async () =>
   useAsyncData<Array<WPPost>>(
     'posts',
     () =>
@@ -12,6 +12,9 @@ export const usePosts = () =>
       ),
     {
       server: true, // garante que a requisição será feita no servidor
-      transform: (data) => data, // opcional: você pode transformar os dados aqui se necessário
+      transform: (data) => {
+        console.log(data);
+        return data;
+      }, // opcional: você pode transformar os dados aqui se necessário
     },
   );
