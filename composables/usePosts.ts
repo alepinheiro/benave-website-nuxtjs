@@ -11,7 +11,7 @@ export const usePosts = async () =>
         },
       ),
     {
-      server: true, // garante que a requisição será feita no servidor
+      server: false, // garante que a requisição será feita no servidor
       transform: (data) => {
         console.log(data);
         return data;

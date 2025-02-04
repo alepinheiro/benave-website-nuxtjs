@@ -23,13 +23,13 @@
       </div>
 
       <ClientOnly>
-        <div v-if="statusData === 'pending'">Carregando...</div>
-        <div v-else-if="errorData">Erro: {{ errorData }}</div>
+        <div v-if="status === 'pending'">Carregando...</div>
+        <div v-else-if="error">Erro: {{ error }}</div>
         <div
           v-else
           class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
-          <BlogThePost v-if="postsData" :post="postsData[0]"> </BlogThePost>
-          <BlogThePost v-if="postsData" :post="postsData[1]"> </BlogThePost>
+          <BlogThePost v-if="data" :post="data[0]"> </BlogThePost>
+          <BlogThePost v-if="data" :post="data[1]"> </BlogThePost>
           <div v-else>nenhum post</div>
         </div>
       </ClientOnly>
@@ -37,15 +37,5 @@
   </section>
 </template>
 <script lang="ts" setup>
-  const postsData = ref(null);
-  const errorData = ref(null);
-  const statusData = ref(null);
-
-  onMounted(async () => {
-    const { data, status, error } = await usePosts();
-    postsData.value = data.value;
-    statusData.value = status.value;
-    errorData.value = error.value;
-    console.log(data.value);
-  });
+  const { data, status, error } = await usePosts();
 </script>
