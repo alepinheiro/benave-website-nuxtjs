@@ -21,11 +21,9 @@
 
         <Button>Acesse nosso Blog</Button>
       </div> -->
-      <p class="text-red-500">
-        {{ data }}
-      </p>
+
       <p class="text-primary-500">
-        {{ computedData }}
+        {{ computedPosts }}
       </p>
       <!-- <ClientOnly>
         <div v-if="statusData === 'pending'">Carregando...</div>
@@ -49,11 +47,12 @@
   const errorData = ref<any>();
   const statusData = ref<any>();
   const computedPosts = computed(() => posts.value);
-  const computedData = computed(() => data.value);
   // if (import.meta.client) {
-  const { data, status, error } = await useFetch('/api/posts');
-  posts.value = data.value;
-  statusData.value = status.value;
-  errorData.value = error.value;
+  onMounted(async () => {
+    const { data, status, error } = await useFetch('/api/posts');
+    posts.value = data.value;
+    statusData.value = status.value;
+    errorData.value = error.value;
+  });
   // }
 </script>
