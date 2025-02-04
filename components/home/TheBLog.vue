@@ -1,28 +1,12 @@
 <template>
   <section class="px-5 py-12">
     <div class="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row">
-      <ClientOnly>
-        <!-- Estado de carregamento -->
-        <template v-if="status === 'pending'">
-          <div>Carregando...</div>
-        </template>
-
-        <!-- Estado de erro -->
-        <template v-else-if="error">
-          <div>Erro ao carregar posts</div>
-        </template>
-
-        <!-- Estado com dados -->
-        <template v-else>
-          <div v-if="posts?.length">
-            <div v-for="post in posts" :key="post.id">
-              <!-- Renderize o conteúdo do post aqui -->
-              <h2>{{ post.title }}</h2>
-            </div>
-          </div>
-          <div v-else>Nenhum post encontrado</div>
-        </template>
-      </ClientOnly>
+      <div v-if="pending">Carregando...</div>
+      <div v-else-if="error">Erro ao carregar posts.</div>
+      <div v-else>
+        <p class="text-red-500">{{ posts }}</p>
+        <p class="text-primary-500">{{ posts }}</p>
+      </div>
     </div>
   </section>
 </template>
@@ -30,17 +14,12 @@
 <script lang="ts" setup>
   import type { WPPost } from '~/types/wordPress';
 
-  // Use composable para fetch
+  // ✅ Use o useFetch diretamente para funcionar no SSR e CSR
   const {
     data: posts,
-    status,
+    pending,
     error,
-  } = await useFetch('/api/posts', {
-    // Garante que o estado inicial seja consistente
-    default: () => [],
-    // Transforma os dados para evitar problemas de reatividade
-    transform: (response) => {
-      return response || [];
-    },
-  });
+  } = await useFetch<WPPost[]>('/api/posts');
+
+  // Remove o computed desnecessário
 </script>
