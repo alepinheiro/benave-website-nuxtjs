@@ -21,11 +21,15 @@
 
         <Button>Acesse nosso Blog</Button>
       </div> -->
-
-      <p class="text-primary-500">
-        {{ computedPosts }}
-      </p>
-      <!-- <ClientOnly>
+      <ClientOnly>
+        <p class="text-red-500">
+          {{ posts }}
+        </p>
+        <p class="text-primary-500">
+          {{ computedPosts }}
+        </p>
+      </ClientOnly>
+      <!--
         <div v-if="statusData === 'pending'">Carregando...</div>
         <div v-else-if="errorData">Erro: {{ errorData }}</div>
         <div
@@ -46,7 +50,7 @@
   const posts = ref<Array<WPPost> | null>(null);
   const errorData = ref<any>();
   const statusData = ref<any>();
-  const computedPosts = computed(() => posts.value);
+  const computedPosts = computed(() => posts);
   // if (import.meta.client) {
   onMounted(async () => {
     const { data, status, error } = await useFetch('/api/posts');
