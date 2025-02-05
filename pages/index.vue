@@ -5,6 +5,10 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
+    <LazyHomeTheBlog />
+    <NuxtIsland>
+      <HomeTheBlog />
+    </NuxtIsland>
     <ClientOnly fallbackTag="span">
       <HomeTheBlog />
       <template #fallback>
