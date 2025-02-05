@@ -16,14 +16,11 @@
 </template>
 
 <script lang="ts" setup>
-  import type { WPPost } from '~/types/wordPress';
-
   // ✅ Use o useFetch diretamente para funcionar no SSR e CSR
-  const {
-    data: posts,
-    status,
-    error,
-  } = await useLazyFetch<WPPost[]>('/api/posts');
+  const { data: posts, status, error } = await useLazyFetch('/api/posts');
+  console.log({ posts });
+  console.log({ status });
+  console.log({ error });
 
   // Remove o computed desnecessário
 </script>
