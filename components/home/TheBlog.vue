@@ -1,33 +1,39 @@
 <template>
-  <section class="blog px-5 py-12">
+  <section class="px-5 py-12">
     <div class="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row">
-      <template v-if="status === 'pending'">Carregando...</template>
-      <template v-if="status === 'success' && posts && posts.length > 0">
-        <div>
-          <p class="text-red-500" v-html="posts[0].title.rendered"></p>
-          <p class="text-primary-500" v-html="posts[0].title.rendered"></p>
+      <div class="flex flex-col justify-around gap-2 md:items-start">
+        <div
+          class="flex flex-row items-center justify-center gap-2 text-primary">
+          <TheLogo type="icon" class="h-10 w-8" />
+          <h2 class="border-b-2 border-primary text-xl font-bold">
+            {{ $t('pages.home.blog.title') }}
+          </h2>
         </div>
-      </template>
-      <template v-else-if="status === 'error'">
-        {{ error }}
-      </template>
+
+        <h3 class="pt-4 font-bold">
+          {{ $t('pages.home.blog.tagline') }}
+        </h3>
+
+        <p>
+          Esses temas destacam como a engenharia elétrica está conectada aos
+          avanços tecnológicos e mudanças sociais.
+        </p>
+
+        <Button>Acesse nosso Blog</Button>
+      </div>
+      <template v-if="status === 'pending'">Carregando...</template>
+      <div v-else-if="error">Erro: {{ error }}</div>
+      <div
+        v-else-if="posts"
+        class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
+        <BlogThePost :post="posts[0]"> </BlogThePost>
+        <BlogThePost :post="posts[1]"> </BlogThePost>
+      </div>
+      <div v-else>nenhum post</div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-  // ✅ Use o useFetch diretamente para funcionar no SSR e CSR
-  const {
-    data: posts,
-    status,
-    error,
-  } = await useFetch('/api/posts', {
-    lazy: true,
-    server: false,
-  });
-  console.log({ posts });
-  console.log({ status });
-  console.log({ error });
-
-  // Remove o computed desnecessário
+  const { data: posts, status, error } = await useFetch('/api/posts');
 </script>
