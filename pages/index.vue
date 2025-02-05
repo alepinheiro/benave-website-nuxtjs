@@ -6,7 +6,7 @@
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
     <LazyHomeTheBlog />
-    <NuxtIsland>
+    <NuxtIsland name="HomeTheBlog">
       <HomeTheBlog />
     </NuxtIsland>
     <ClientOnly fallbackTag="span">
