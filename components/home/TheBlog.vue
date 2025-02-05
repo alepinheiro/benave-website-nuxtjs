@@ -35,5 +35,11 @@
 </template>
 
 <script lang="ts" setup>
-  const { data: posts, status, error } = await useFetch('/api/posts');
+  const {
+    data: posts,
+    status,
+    error,
+  } = await useFetch('/api/posts', {
+    lazy: true,
+  });
 </script>
