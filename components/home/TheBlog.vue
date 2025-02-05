@@ -24,7 +24,7 @@
       <template v-if="status === 'pending'">Carregando...</template>
       <div v-else-if="error">Erro: {{ error }}</div>
       <div
-        v-else-if="posts?.length > 0"
+        v-else-if="posts"
         class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
         <BlogThePost :post="posts[0]"> </BlogThePost>
         <BlogThePost :post="posts[1]"> </BlogThePost>
@@ -35,11 +35,5 @@
 </template>
 
 <script lang="ts" setup>
-  const {
-    data: posts,
-    status,
-    error,
-  } = await useFetch('/api/posts', {
-    lazy: true,
-  });
+  const { data: posts, status, error } = await useFetch('/api/posts');
 </script>

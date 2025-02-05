@@ -6,7 +6,7 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
-    <LazyHomeTheBlog />
+    <HomeTheBlog />
 
     <!-- <ClientOnly fallbackTag="span">
       <HomeTheBlog />
