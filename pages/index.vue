@@ -8,12 +8,12 @@
     <LazyHomeThePortfolio />
     <LazyHomeTheBlog />
 
-    <ClientOnly fallbackTag="span">
+    <!-- <ClientOnly fallbackTag="span">
       <HomeTheBlog />
       <template #fallback>
         <p>Loading posts...</p>
       </template>
-    </ClientOnly>
+    </ClientOnly> -->
     <LazyHomeTheTestimonials />
     <LazyHomeCallToAction />
     <LazyHomeTheFooter />

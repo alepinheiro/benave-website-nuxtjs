@@ -24,7 +24,7 @@
       <template v-if="status === 'pending'">Carregando...</template>
       <div v-else-if="error">Erro: {{ error }}</div>
       <div
-        v-else-if="posts"
+        v-else-if="posts?.length > 0"
         class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
         <BlogThePost :post="posts[0]"> </BlogThePost>
         <BlogThePost :post="posts[1]"> </BlogThePost>
