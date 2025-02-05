@@ -17,7 +17,14 @@
 
 <script lang="ts" setup>
   // ✅ Use o useFetch diretamente para funcionar no SSR e CSR
-  const { data: posts, status, error } = await useLazyFetch('/api/posts');
+  const {
+    data: posts,
+    status,
+    error,
+  } = await useFetch('/api/posts', {
+    lazy: true,
+    server: false,
+  });
   console.log({ posts });
   console.log({ status });
   console.log({ error });
