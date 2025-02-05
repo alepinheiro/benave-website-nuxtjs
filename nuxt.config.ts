@@ -1,6 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-// import { defineAppConfig } from 'nuxt/app'
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   runtimeConfig: {
