@@ -1,16 +1,16 @@
 <template>
   <section class="blog px-5 py-12">
     <div class="mx-auto flex max-w-7xl flex-col gap-5 md:flex-row">
-      <div v-if="status === 'pending'">Carregando...</div>
-      <div v-if="status === 'success' && posts && posts.length > 0">
+      <template v-if="status === 'pending'">Carregando...</template>
+      <template v-if="status === 'success' && posts && posts.length > 0">
         <div>
           <p class="text-red-500" v-html="posts[0].title.rendered"></p>
           <p class="text-primary-500" v-html="posts[0].title.rendered"></p>
         </div>
-      </div>
-      <div v-else-if="status === 'error'">
+      </template>
+      <template v-else-if="status === 'error'">
         {{ error }}
-      </div>
+      </template>
     </div>
   </section>
 </template>

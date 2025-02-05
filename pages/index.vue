@@ -1,5 +1,6 @@
 <template>
   <main class="relative">
+    <NuxtLoadingIndicator />
     <HomeTopBar />
     <HomeHeroSection />
     <LazyHomeAboutUs />
