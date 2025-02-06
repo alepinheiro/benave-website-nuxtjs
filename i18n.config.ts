@@ -187,17 +187,17 @@ const pages = {
         links: {
           1: {
             label: 'WhatsApp',
-            icon: 'mdi-whatsapp',
+            icon: '@:icons.whatsapp',
             url: '#',
           },
           2: {
             label: 'Instagram',
-            icon: 'mdi-instagram',
+            icon: '@:icons.instagram',
             url: '#',
           },
           3: {
             label: 'LinkedIn',
-            icon: 'mdi-linkedin',
+            icon: '@:icons.linkedin',
             url: '#',
           },
         },
@@ -223,12 +223,20 @@ const app = {
   name: 'Benavê Engenharia',
 };
 
+const icons = {
+  whatsapp: 'mdi-whatsapp',
+  instagram: 'mdi-instagram',
+  linkedin: 'mdi-linkedin',
+  menu: 'material-symbols:menu-rounded',
+};
+
 export default defineI18nConfig(() => ({
   legacy: false,
   locale: 'br',
   messages: {
     br: {
       app,
+      icons,
       pages,
     },
   },
