@@ -55,8 +55,11 @@
             </DrawerContent>
           </Drawer>
 
-          <div class="flex flex-row gap-2 divide-x">
-            <div v-for="item in Array(5).keys()" :key="item" class="min-w-48">
+          <div class="hidden flex-row gap-2 divide-x md:flex">
+            <div
+              v-for="item in Array(5).keys()"
+              :key="item"
+              class="min-w-24 lg:min-w-48">
               <div class="flex flex-row items-center justify-center">
                 <NuxtLink
                   :to="$t(`pages.home.topBar.menu.links.${item + 1}.url`)"

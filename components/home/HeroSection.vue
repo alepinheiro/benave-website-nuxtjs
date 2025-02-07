@@ -2,11 +2,11 @@
   <section
     class="relative -mt-20 overflow-hidden bg-primary p-5 py-12 md:h-auto lg:h-[80vh]">
     <div class="mx-auto flex h-full max-w-7xl flex-col md:flex-row md:pt-24">
-      <h1 class="py-8 text-center text-xl leading-5 text-white md:hidden">
+      <h1 class="mt-8 py-8 text-center text-xl leading-5 text-white md:hidden">
         {{ $t('pages.home.heroSection.title') }}
       </h1>
       <div class="my-auto hidden w-1/2 md:block">
-        <div class="flex w-5/6 flex-col gap-20">
+        <div class="flex w-5/6 flex-col gap-20 md:gap-5">
           <h1 class="text-3xl text-white">
             Transformamos ideias em energia,
             <b> soluções em inovação. </b>
@@ -47,10 +47,12 @@
               slideShadows: false,
               scale: 0.85,
             }">
-            <swiper-slide v-for="(slide, idx) in slides" :key="idx">
+            <swiper-slide
+              v-for="index in [...Array(3).keys(), ...Array(3).keys()]"
+              :key="index">
               <div class="h-60 w-full md:h-96">
                 <NuxtImg
-                  :src="slide"
+                  :src="$t(`pages.home.heroSection.slides.${index + 1}.img`)"
                   height="300"
                   width="300"
                   class="h-60 w-full rounded-3xl object-cover md:h-96" />
@@ -83,12 +85,4 @@
   </section>
 </template>
 
-<script setup lang="ts">
-  const slides = [
-    'https://unsplash.it/1920/1080?random=1&gravity=center',
-    'https://unsplash.it/1920/1080?random=2&gravity=center',
-    'https://unsplash.it/1920/1080?random=3&gravity=center',
-    'https://unsplash.it/1920/1080?random=4&gravity=center',
-    'https://unsplash.it/1920/1080?random=5&gravity=center',
-  ];
-</script>
+<script setup lang="ts"></script>

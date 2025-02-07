@@ -6,6 +6,20 @@ const pages = {
       subtitleBold: 'soluções em inovação',
       aboutUs: 'A Benavê',
       contactUs: 'Fale Conosco',
+      slides: {
+        1: {
+          alt: 'Slide 1',
+          img: '/img/slide-hero-1.png',
+        },
+        2: {
+          alt: 'Slide 2',
+          img: '/img/slide-hero-2.png',
+        },
+        3: {
+          alt: 'Slide 3',
+          img: '/img/slide-hero-3.png',
+        },
+      },
     },
     aboutUs: {
       tagline: 'Nossa História',
