@@ -216,6 +216,33 @@ const pages = {
         lgpd: 'Leia nosso Aviso de Privacidade e a Política de Cookies.',
       },
     },
+    topBar: {
+      menu: {
+        title: 'Selecione uma opção',
+        links: {
+          1: {
+            label: 'Início',
+            url: '#app',
+          },
+          2: {
+            label: 'Sobre',
+            url: '#aboutUs',
+          },
+          3: {
+            label: 'Serviços',
+            url: '#services',
+          },
+          4: {
+            label: 'Portfólio',
+            url: '#portfolio',
+          },
+          5: {
+            label: 'Contato',
+            url: '#contact',
+          },
+        },
+      },
+    },
   },
 };
 

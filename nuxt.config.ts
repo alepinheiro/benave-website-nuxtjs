@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxtjs/i18n',
     'nuxt-swiper',
+    'nuxt-aos',
   ],
   shadcn: {
     /**
@@ -36,6 +37,11 @@ export default defineNuxtConfig({
   },
   fonts: {
     provider: 'google',
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
   },
 });
 

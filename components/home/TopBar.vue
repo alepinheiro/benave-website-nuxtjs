@@ -1,7 +1,7 @@
 <template>
-  <nav class="fixed z-10 w-full p-2">
+  <nav class="sticky top-0 z-10 px-2 pt-2">
     <div
-      class="h-full w-full max-w-7xl rounded-xl bg-white px-6 py-2 text-primary shadow-md">
+      class="mx-auto h-full w-full max-w-7xl rounded-xl bg-white px-6 py-2 text-primary shadow-md">
       <div class="flex flex-row items-center justify-between">
         <TheLogo type="full" class="w-fit" width="150" height="48" />
         <div class="flex flex-row items-center gap-4">
@@ -19,16 +19,36 @@
             <DrawerContent>
               <div class="mx-auto w-full max-w-sm">
                 <DrawerHeader>
-                  <DrawerTitle>Move Goal</DrawerTitle>
-                  <DrawerDescription
+                  <DrawerTitle>
+                    <h3>
+                      {{ $t('pages.home.topBar.menu.title') }}
+                    </h3>
+                  </DrawerTitle>
+                  <!-- <DrawerDescription
                     >Set your daily activity goal.</DrawerDescription
-                  >
+                  > -->
                 </DrawerHeader>
 
                 <DrawerFooter>
-                  <Button>Submit</Button>
                   <DrawerClose as-child>
-                    <Button variant="outline"> Cancel </Button>
+                    <div class="">
+                      <ul class="flex w-full flex-col">
+                        <li v-for="item in Array(5).keys()" key="item">
+                          <NuxtLink
+                            :to="
+                              $t(`pages.home.topBar.menu.links.${item + 1}.url`)
+                            "
+                            :external="true">
+                            {{
+                              $t(
+                                `pages.home.topBar.menu.links.${item + 1}.label`,
+                              )
+                            }}
+                          </NuxtLink>
+                          <Separator class="my-4 w-full" />
+                        </li>
+                      </ul>
+                    </div>
                   </DrawerClose>
                 </DrawerFooter>
               </div>
