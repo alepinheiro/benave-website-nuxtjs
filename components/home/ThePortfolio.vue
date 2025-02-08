@@ -44,12 +44,12 @@
             scale: 0.85,
           }">
           <swiper-slide v-for="(slide, idx) in [1, 2, 3, 4]" :key="idx">
-            <div class="flex h-72 flex-col gap-8">
+            <div class="flex h-72 flex-col gap-8 lg:h-96">
               <NuxtImg
                 :src="$t('pages.home.portfolio.cases.' + slide + '.img')"
                 height="600"
                 width="300"
-                class="h-72 w-full rounded-3xl object-cover" />
+                class="h-72 w-full rounded-3xl object-cover lg:h-56" />
               <h4
                 class="mx-auto w-3/4 text-center text-lg font-bold leading-5 text-white">
                 {{ $t('pages.home.portfolio.cases.' + slide + '.title') }}
