@@ -134,11 +134,18 @@
         </ul>
       </div>
     </div>
+    <NuxtImg
+      width="900"
+      height="1200"
+      src="/img/services-background-logo.png"
+      class="absolute -bottom-72 -left-40 -z-10 object-contain lg:-bottom-96" />
   </section>
 </template>
 
 <style lang="scss">
   #services {
+    @apply relative z-0 overflow-hidden bg-gradient-to-b from-white to-zinc-200;
+
     .service {
       @apply mx-auto flex flex-col items-center gap-4 px-5 pt-10 md:flex-row-reverse md:odd:flex-row;
 

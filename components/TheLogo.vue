@@ -4,6 +4,12 @@
     viewBox="0 0 20 29"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="bottomGradient" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="currentColor" stop-opacity="1" />
+        <stop offset="100%" stop-color="currentColor" stop-opacity="0" />
+      </linearGradient>
+    </defs>
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"
