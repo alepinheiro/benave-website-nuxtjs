@@ -1,7 +1,7 @@
 <template>
   <section class="relative z-0 pb-12">
     <div
-      class="mx-auto flex w-full max-w-7xl flex-col gap-5 px-5 md:flex-row md:py-12">
+      class="mx-auto flex w-full max-w-4xl flex-col gap-5 px-5 md:flex-row md:py-12">
       <NuxtImg
         src="/img/about-featured.png"
         height="200"
@@ -22,7 +22,8 @@
             class="h-fit w-full md:h-full md:w-3/4" />
         </div>
 
-        <div class="-mt-10 flex w-full flex-col gap-2 p-2 px-5 text-primary">
+        <div
+          class="-mt-10 flex w-full flex-col gap-2 p-2 px-5 text-primary lg:-mt-12">
           <div>
             <h3 class="font-bold">
               {{ $t('pages.home.aboutUs.tagline') }}
@@ -31,9 +32,7 @@
               {{ $t('pages.home.aboutUs.companyName') }}
             </h2>
           </div>
-          <div
-            class="w-full md:w-3/4"
-            v-html="$t('pages.home.aboutUs.summary')"></div>
+          <div class="w-full" v-html="$t('pages.home.aboutUs.summary')"></div>
         </div>
       </div>
     </div>
