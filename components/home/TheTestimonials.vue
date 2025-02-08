@@ -12,7 +12,7 @@
           :autoplay="true"
           :autoHeight="false"
           :initialSlide="2"
-          :spaceBetween="0"
+          :spaceBetween="5"
           :pagination="true"
           :slidesPerView="1"
           :centeredSlides="true"

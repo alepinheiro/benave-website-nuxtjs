@@ -120,7 +120,7 @@ const pages = {
     testimonials: {
       title: 'EXPERIÊNCIAS QUE INSPIRAM CONFIANÇA',
       1: {
-        img: 'https://unsplash.it/900/600?random=18&gravity=center',
+        img: '/img/testimonial-robson.png',
         name: 'Robson',
         company: 'Artesian',
         job: 'Gerente de produção',
@@ -128,7 +128,7 @@ const pages = {
           'Tive uma boa experiência com os serviços prestados e a agilidade foi o ponto positivo mais relevante nesta parceria. Sem dúvidas, eu recomendaria a Benavê para outros colegas.',
       },
       2: {
-        img: 'https://unsplash.it/900/600?random=19&gravity=center',
+        img: '/img/testimonial-geferson.png',
         name: 'Geferson Bachi',
         company: 'GB Instalações e manutenções elétricas',
         job: 'Proprietário',

@@ -3,15 +3,15 @@
     <div class="gap-2 bg-primary px-5 py-12">
       <div
         class="mx-auto flex max-w-7xl flex-row md:items-center md:justify-around">
-        <div class="flex w-1/2 flex-col items-start">
+        <div class="flex w-full flex-col items-start md:w-1/2">
           <h2 class="text-center text-2xl font-bold text-white md:text-start">
             {{ $t('pages.home.callToAction.1.title') }}
           </h2>
-          <Button variant="ghost" class="md:text-white">
+          <Button variant="ghost" class="hidden md:flex md:text-white">
             {{ $t('pages.home.callToAction.1.email') }}
           </Button>
         </div>
-        <Button variant="inverted">
+        <Button variant="inverted" class="hidden md:flex">
           {{ $t('pages.home.callToAction.1.phone') }}
         </Button>
       </div>
