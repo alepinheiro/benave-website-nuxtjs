@@ -1,9 +1,9 @@
 <template>
   <section class="bg-zinc-100 px-5 pt-12">
-    <div class="flex flex-col gap-2 md:flex-row">
+    <div class="flex flex-col gap-2 md:flex-row md:items-center">
       <TheLogo type="full" class="h-10 w-24 text-primary" />
 
-      <p class="pt-4 font-medium text-primary">
+      <p class="pt-4 font-bold text-primary md:pt-0">
         {{ $t('pages.home.footer.tagline') }}
       </p>
     </div>
@@ -11,7 +11,7 @@
     <div class="my-10 border-b border-zinc-200"></div>
 
     <div
-      class="mx-auto flex w-full max-w-7xl flex-row items-start justify-between">
+      class="mx-auto flex w-full max-w-7xl flex-col items-start justify-between md:flex-row">
       <div>
         <h3 class="font-bold">
           {{ $t('pages.home.footer.about.title') }}
