@@ -45,7 +45,7 @@ const pages = {
           prefix: 'Projetos de',
           suffix: 'painéis elétricos',
         },
-        img: 'https://unsplash.it/900/600?random=10&gravity=center',
+        img: '/img/services-1.png',
         summary:
           'Concepção e detalhamento do conjunto de componentes que garantem o controle e distribuição eficiente de energia elétrica, sempre seguindo rigorosamente as normas técnicas.',
         services: {
@@ -62,7 +62,7 @@ const pages = {
           prefix: 'Projetos',
           suffix: 'Elétricos',
         },
-        img: 'https://unsplash.it/900/600?random=11&gravity=center',
+        img: '/img/services-2.png',
         summary:
           'Desenho técnico e planejamento de todas as informações pertinentes e necessárias para a execução da obra, elaborado em software BIM, garantindo eficiência e precisão.',
         services: {
@@ -77,7 +77,7 @@ const pages = {
           prefix: 'Memorial',
           suffix: 'de Cálculo',
         },
-        img: 'https://unsplash.it/900/600?random=12&gravity=center',
+        img: '/img/services-3.png',
         summary:
           'Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.',
         services: {

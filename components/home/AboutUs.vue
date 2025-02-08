@@ -49,15 +49,17 @@
       <ul
         class="grid grid-rows-4 gap-4 md:grid-cols-2 md:grid-rows-1 lg:mx-auto lg:max-w-xl">
         <li
-          v-for="item of [1, 2, 3, 4]"
+          v-for="item of Array(4).keys()"
           :key="item"
           class="flex rounded-2xl bg-zinc-800 p-4 text-white">
           <p class="my-auto w-full text-center text-lg">
-            {{ $t('pages.home.aboutUs.valueProposition.highlights.' + item) }}
+            {{
+              $t('pages.home.aboutUs.valueProposition.highlights.' + (item + 1))
+            }}
           </p>
         </li>
       </ul>
-      <Button class="mx-auto">
+      <Button class="mx-auto md:hidden">
         {{ $t('pages.home.aboutUs.cta') }}
       </Button>
     </div>
