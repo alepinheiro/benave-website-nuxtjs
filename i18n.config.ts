@@ -236,23 +236,23 @@ const pages = {
         links: {
           1: {
             label: 'Início',
-            url: '#app',
+            url: '#inicio',
           },
           2: {
             label: 'Sobre',
-            url: '#aboutUs',
+            url: '#sobre',
           },
           3: {
             label: 'Serviços',
-            url: '#services',
+            url: '#servicos',
           },
           4: {
             label: 'Portfólio',
-            url: '#portfolio',
+            url: '#portifolio',
           },
           5: {
             label: 'Contato',
-            url: '#contact',
+            url: '#contato',
           },
         },
       },

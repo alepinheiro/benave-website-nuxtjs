@@ -24,9 +24,9 @@
                       {{ $t('pages.home.topBar.menu.title') }}
                     </h3>
                   </DrawerTitle>
-                  <!-- <DrawerDescription
-                    >Set your daily activity goal.</DrawerDescription
-                  > -->
+                  <DrawerDescription class="hidden">
+                    Selecione uma opção do menu
+                  </DrawerDescription>
                 </DrawerHeader>
 
                 <DrawerFooter>

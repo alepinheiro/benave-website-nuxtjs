@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-primary py-12">
+  <section id="portifolio" class="bg-primary py-32">
     <div class="flex flex-row items-center justify-center gap-2">
       <NuxtImg height="27" width="20" src="/img/logo-benave.png" />
       <div class="flex w-fit flex-col">

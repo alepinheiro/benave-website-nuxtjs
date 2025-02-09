@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="py-12">
+  <section id="servicos" tabindex="-1">
     <div class="relative w-full">
       <h2
         class="bg-gradient-to-t from-primary to-primary-800 bg-clip-text text-center text-2xl font-bold text-transparent">
@@ -143,8 +143,8 @@
 </template>
 
 <style lang="scss">
-  #services {
-    @apply relative z-0 overflow-hidden bg-gradient-to-b from-white to-zinc-200;
+  #servicos {
+    @apply relative z-0 overflow-hidden bg-gradient-to-b from-white to-zinc-200 py-28;
 
     .service {
       @apply mx-auto flex flex-col items-center gap-4 px-5 pt-10 md:flex-row-reverse md:odd:flex-row;

@@ -1,5 +1,7 @@
 <template>
-  <section class="relative z-0 pb-12">
+  <section
+    id="sobre"
+    class="relative z-0 -mt-20 flex flex-col justify-between py-20 md:mt-0">
     <NuxtImg
       src="/img/about-featured.png"
       height="200"

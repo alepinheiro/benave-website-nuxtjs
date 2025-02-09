@@ -70,7 +70,11 @@
 
 @layer base {
   * {
-    @apply border-border font-plusJakartaSans;
+    @apply scroll-smooth border-border font-plusJakartaSans;
+  }
+
+  html {
+    scroll-padding-top: 76px;
   }
   body {
     @apply bg-background text-foreground;

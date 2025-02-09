@@ -1,5 +1,5 @@
 <template>
-  <main class="relative scroll-smooth">
+  <main class="relative">
     <NuxtLoadingIndicator />
     <div class="top-0 bg-primary">
       <div
