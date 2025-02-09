@@ -1,5 +1,5 @@
 <template>
-  <NuxtPage vaul-drawer-wrapper class="scroll-smooth" />
+  <NuxtPage />
 </template>
 
 <script setup lang="ts"></script>
