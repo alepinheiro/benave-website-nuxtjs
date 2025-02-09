@@ -1,15 +1,17 @@
 <template>
-  <Card asChild>
+  <Card asChild class="justify-around">
     <article>
+      <NuxtImg
+        width="300"
+        height="200"
+        :src="post.jetpack_featured_media_url"
+        class="h-full w-full rounded-t-lg object-cover md:h-48"></NuxtImg>
       <CardHeader>
-        <NuxtImg
-          :src="post.jetpack_featured_media_url"
-          class="rounded-lg"></NuxtImg>
         <CardTitle>
           <h2 v-html="post.title.rendered"></h2>
         </CardTitle>
         <CardDescription>
-          <p v-html="post.excerpt.rendered"></p>
+          <p v-html="post.excerpt.rendered" class="line-clamp-3"></p>
         </CardDescription>
       </CardHeader>
 

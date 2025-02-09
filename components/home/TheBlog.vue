@@ -26,8 +26,8 @@
       <div
         v-else-if="posts"
         class="flex max-w-xl flex-col gap-2 pt-4 md:max-w-3xl md:flex-row">
-        <BlogThePost :post="posts[0]"> </BlogThePost>
-        <BlogThePost :post="posts[1]"> </BlogThePost>
+        <BlogThePost :post="posts[0]" class="flex-1"> </BlogThePost>
+        <BlogThePost :post="posts[1]" class="flex-1"> </BlogThePost>
       </div>
       <div v-else>nenhum post</div>
     </div>
