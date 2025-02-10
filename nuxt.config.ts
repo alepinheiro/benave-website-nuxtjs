@@ -43,5 +43,16 @@ export default defineNuxtConfig({
       scrollBehaviorType: 'smooth',
     },
   },
+  app: {
+    head: {
+      title: 'Benavê Engenharia',
+      meta: [
+        {
+          name: 'description',
+          content: 'Transformamos ideias em energia, soluções em inovação.',
+        },
+      ],
+    },
+  },
 });
 
