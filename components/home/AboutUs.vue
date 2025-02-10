@@ -46,7 +46,7 @@
       <h3
         data-aos="fade-up"
         data-aos-delay="50"
-        class="text-center text-2xl leading-5 text-primary">
+        class="text-center text-2xl text-primary">
         {{ $t('pages.home.aboutUs.valueProposition.prefix') }}
         <br class="md:hidden" />
         <b>
