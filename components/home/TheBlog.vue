@@ -19,7 +19,9 @@
           avanços tecnológicos e mudanças sociais.
         </p>
 
-        <Button>Acesse nosso Blog</Button>
+        <Button asChild>
+          <NuxtLink to="/blog"> Acesse nosso Blog </NuxtLink>
+        </Button>
       </div>
       <template v-if="status === 'pending'">Carregando...</template>
       <div v-else-if="error">Erro: {{ error }}</div>

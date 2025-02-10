@@ -1,4 +1,4 @@
-export type WPPostType = "posts" | "pages";
+export type WPPostType = 'posts' | 'pages';
 export type WPPost = {
   id: string;
   slug: string;
@@ -21,7 +21,7 @@ export type WPPost = {
   type: string;
   link: string;
   _embedded: WPPostEmbedded;
-  jetpack_featured_media_url: string
+  jetpack_featured_media_url: string;
 };
 export type WPMediaDetailSize = {
   file: string;
@@ -52,9 +52,9 @@ export type WPPostEmbedded = {
       description: string;
       link: string;
       slug: string;
-    }
+    },
   ];
-  "wp:featuredmedia"?: Array<{
+  'wp:featuredmedia'?: Array<{
     alt_text: string;
     author: number;
     caption: {
@@ -81,7 +81,7 @@ export type WPPostEmbedded = {
     };
     type: string;
   }>;
-  "wp:term": [
+  'wp:term': [
     [
       {
         id: string;
@@ -89,7 +89,15 @@ export type WPPostEmbedded = {
         name: string;
         slug: string;
         taxonomy: string;
-      }
-    ]
+      },
+    ],
   ];
 };
+
+export interface WPCategory {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  count: number;
+}

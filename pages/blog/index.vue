@@ -1,49 +1,55 @@
 <template>
-  <div class="relative">
-    <div
-      class="sticky top-0 flex flex-row justify-between bg-white p-5 drop-shadow">
-      <div
-        class="flex flex-row gap-2 rounded-md border border-primary p-4 text-primary">
-        <img src="https://stylish-gen.web.app/iconesclaros/28.svg" />
-        <span style="font-family: 'Montserrat'; text-transform: capitalize">
-          Stylish Gen
-        </span>
-      </div>
-      <button>
-        <Icon name="material-symbols:menu-rounded" class="h-8 w-8" />
-      </button>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="mb-8 text-4xl font-bold">Artigos em destaque</h1>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <BlogThePost
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+        class="flex-1 first:row-span-3">
+      </BlogThePost>
     </div>
 
-    <div class="flex w-full items-center p-2">
-      <ClientOnly>
-        <div v-if="status === 'pending'">Carregando...</div>
-        <div v-else-if="error">Erro: {{ error }}</div>
-        <div v-else class="flex max-w-xl flex-col gap-2">
-          <Card v-for="post of posts" :key="post.id">
-            <CardHeader>
-              <NuxtImg
-                :src="post.jetpack_featured_media_url"
-                class="rounded-lg"></NuxtImg>
-              <CardTitle>
-                <h2 v-html="post.title.rendered"></h2>
-              </CardTitle>
-              <CardDescription>
-                <p v-html="post.excerpt.rendered"></p>
-              </CardDescription>
-            </CardHeader>
-
-            <CardFooter>
-              <Button asChild>
-                <NuxtLink :to="`/posts/${post.slug}`"> Ler mais </NuxtLink>
-              </Button>
-            </CardFooter>
-          </Card>
-        </div>
-      </ClientOnly>
+    <div class="mt-8 flex justify-center">
+      <button
+        v-if="page > 1"
+        @click="page--"
+        class="mr-2 rounded-lg bg-blue-600 px-4 py-2 text-white">
+        Anterior
+      </button>
+      <button
+        v-if="hasMore"
+        @click="page++"
+        class="rounded-lg bg-blue-600 px-4 py-2 text-white">
+        Próximo
+      </button>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-  const { data: posts, status, error } = await usePosts();
+<script setup>
+  const page = ref(1);
+  const posts = ref([]);
+  const hasMore = ref(false);
+
+  // Função para buscar posts do WordPress
+  async function fetchPosts() {
+    try {
+      const data = await $fetch(`/api/posts?page=${page.value}`);
+      posts.value = data;
+      hasMore.value = data.hasMore;
+    } catch (error) {
+      console.error('Erro ao buscar posts:', error);
+    }
+  }
+
+  // Observa mudanças na página
+  watch(page, () => {
+    fetchPosts();
+  });
+
+  // Busca inicial
+  onMounted(() => {});
+  fetchPosts();
 </script>
