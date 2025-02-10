@@ -3,11 +3,13 @@
     id="sobre"
     class="relative z-0 -mt-20 flex flex-col justify-between py-20 md:mt-0">
     <NuxtImg
+      data-aos="fade-in"
       src="/img/about-featured.png"
       height="200"
       width="300"
       class="relative z-0 h-48 w-full object-cover md:hidden" />
     <div
+      data-aos="fade-in"
       class="mx-auto flex w-full max-w-4xl flex-col gap-5 px-5 md:flex-row md:py-12">
       <NuxtImg
         src="/img/about-featured.png"
@@ -41,7 +43,10 @@
   </section>
   <div class="radial-gradient p-2 py-10">
     <div class="mx-auto flex w-3/4 flex-col gap-5">
-      <h3 class="text-center text-2xl leading-5 text-primary">
+      <h3
+        data-aos="fade-up"
+        data-aos-delay="50"
+        class="text-center text-2xl leading-5 text-primary">
         {{ $t('pages.home.aboutUs.valueProposition.prefix') }}
         <br class="md:hidden" />
         <b>
@@ -52,6 +57,8 @@
         class="grid grid-rows-4 gap-4 md:grid-cols-2 md:grid-rows-1 lg:mx-auto lg:max-w-xl">
         <li
           v-for="item of Array(4).keys()"
+          data-aos="fade-up"
+          :data-aos-delay="50 + 50 * item"
           :key="item"
           class="flex rounded-2xl bg-zinc-800 p-4 text-white">
           <p class="my-auto w-full text-center text-lg">

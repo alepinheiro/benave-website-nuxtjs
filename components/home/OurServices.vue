@@ -7,7 +7,7 @@
       </h2>
     </div>
 
-    <div class="service">
+    <div class="service" data-aos="fade-in">
       <h3 class="md:hidden">
         {{ $t('pages.home.services.electricPanels.title.prefix') }}
         <b>
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="service">
+    <div class="service" data-aos="fade-in">
       <h3 class="md:hidden">
         {{ $t('pages.home.services.electricProjects.title.prefix') }}
         <b>
@@ -99,7 +99,7 @@
       </div>
     </div>
 
-    <div class="service">
+    <div class="service" data-aos="fade-in">
       <h3 class="md:hidden">
         {{ $t('pages.home.services.memorialDescription.title.prefix') }}
         <b>

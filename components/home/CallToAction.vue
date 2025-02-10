@@ -1,5 +1,5 @@
 <template>
-  <section id="contato" class="py-20">
+  <section id="contato" class="pt-20">
     <div class="gap-2 bg-primary px-5 py-12">
       <div
         class="mx-auto flex max-w-7xl flex-row md:items-center md:justify-around">
