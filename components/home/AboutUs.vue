@@ -4,6 +4,7 @@
     class="relative z-0 -mt-20 flex flex-col justify-between py-20 md:mt-0">
     <NuxtImg
       data-aos="fade-in"
+      data-aos-offset="400"
       src="/img/about-featured.png"
       height="200"
       width="300"
