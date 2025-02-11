@@ -14,10 +14,10 @@
     <h3 class="py-6 text-center text-xl font-bold text-white">
       {{ $t('pages.home.portfolio.tagline') }}
     </h3>
-    <div class="mx-5 h-72">
+    <div class="mx-5 h-80">
       <ClientOnly>
         <swiper-container
-          class="h-72"
+          class="h-96"
           :loop="true"
           :effect="'coverflow'"
           :autoplay="true"
