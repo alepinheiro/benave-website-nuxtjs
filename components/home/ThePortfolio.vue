@@ -1,14 +1,16 @@
 <template>
   <section id="portifolio" class="bg-primary py-32">
-    <div class="flex flex-row items-center justify-center gap-2">
-      <NuxtImg height="27" width="20" src="/img/logo-benave.png" />
-      <div class="flex w-fit flex-col">
-        <h2
-          class="bg-gradient-to-r from-primary-600 to-primary-500 bg-clip-text text-center text-2xl font-bold text-transparent">
-          {{ $t('pages.home.portfolio.title') }}
-        </h2>
-        <div class="h-1 bg-primary-600"></div>
+    <div class="mx-auto flex w-fit flex-col">
+      <div class="flex flex-row items-center justify-center gap-2 text-white">
+        <TheLogo type="icon" height="27" width="20" class="" />
+
+        <div class="flex w-fit flex-col">
+          <h2 class="text-center text-2xl font-bold">
+            {{ $t('pages.home.portfolio.title') }}
+          </h2>
+        </div>
       </div>
+      <div class="h-1 bg-primary-600"></div>
     </div>
 
     <h3 class="py-6 text-center text-xl font-bold text-white">

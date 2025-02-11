@@ -69,7 +69,8 @@ const pages = {
           1: 'Luminotécnico',
           2: 'Aterramento',
           3: 'Sistema de Proteção contra Descargas Atmosféricas (SPDA)',
-          4: 'Bandejamento e diagrama de interligação',
+          4: 'Bandejamento',
+          5: 'Diagrama de interligação',
         },
       },
       memorialDescription: {
@@ -81,9 +82,25 @@ const pages = {
         summary:
           'Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.',
         services: {
-          1: 'Cabos elétricos e condutores',
+          1: 'Cabos e condutores elétricos',
           2: 'Sistema de Proteção contra Descargas Atmosféricas (SPDA)',
           3: 'Sistemas luminotécnicos',
+        },
+      },
+      eletroCenter: {
+        title: {
+          prefix: 'Eletrocentros',
+          suffix: '',
+        },
+        img: '/img/services-4.png',
+        summary:
+          'Equipamentos modulares que proporcionam flexibilidade para atender uma ampla gama de aplicações em segmentos variados, como usinas de etanol, siderurgias, mineradoras.',
+        services: {
+          1: 'Luminotécnico',
+          2: 'Bandejamento',
+          3: 'Aterramento',
+          4: 'Sistema de Proteção contra Descargas Atmosféricas (SPDA)',
+          5: 'Diagrama de interligação',
         },
       },
     },
