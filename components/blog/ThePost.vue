@@ -5,7 +5,7 @@
         width="300"
         height="200"
         :src="post.jetpack_featured_media_url"
-        class="h-full w-full rounded-t-lg object-cover md:h-48"></NuxtImg>
+        class="h-36 w-full rounded-t-lg object-cover md:h-48"></NuxtImg>
       <CardHeader>
         <CardTitle>
           <h2 v-html="post.title.rendered"></h2>
