@@ -19,12 +19,12 @@
         </h3>
         <ul class="list-inside list-disc">
           <li v-for="item in [1, 2, 3, 4]" :key="item">
-            <a
-              :href="$t('pages.home.footer.about.links.' + item + '.link')"
+            <NuxtLink
+              :to="$t('pages.home.footer.about.links.' + item + '.url')"
               target="_blank"
               rel="noopener noreferrer">
               {{ $t('pages.home.footer.about.links.' + item + '.label') }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -35,12 +35,12 @@
         </h3>
         <ul class="list-inside list-disc">
           <li v-for="item in [1, 2, 3, 4]" :key="item">
-            <a
-              :href="$t('pages.home.footer.sitemap.links.' + item + '.link')"
+            <NuxtLink
+              :to="$t('pages.home.footer.sitemap.links.' + item + '.url')"
               target="_blank"
               rel="noopener noreferrer">
               {{ $t('pages.home.footer.sitemap.links.' + item + '.label') }}
-            </a>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -72,14 +72,14 @@
               class="h-12 w-12 flex-1 shrink-0 rounded-full bg-white p-2 shadow-lg">
               <a
                 class="text-primary"
-                :href="$t('pages.home.footer.social.links.' + item + '.link')"
+                :href="$t('pages.home.footer.social.links.' + item + '.url')"
                 :title="$t('pages.home.footer.social.links.' + item + '.label')"
                 target="_blank"
                 rel="noopener noreferrer">
                 <Icon
                   :name="$t('pages.home.footer.social.links.' + item + '.icon')"
-                  class="h-8 w-8 shrink-0"
-              /></a>
+                  class="h-8 w-8 shrink-0" />
+              </a>
             </li>
           </ul>
         </div>

@@ -172,19 +172,19 @@ const pages = {
         links: {
           1: {
             label: 'Política de Privacidade',
-            url: '#',
+            url: '/informacoes-legais/#politica-de-privacidade',
           },
           2: {
             label: 'Termos de Uso',
-            url: '#',
+            url: '/informacoes-legais/#termos-de-uso',
           },
           3: {
             label: 'Política de cookies',
-            url: '#',
+            url: '/informacoes-legais/#politica-de-cookies',
           },
           4: {
             label: 'Acessibilidade',
-            url: '#',
+            url: '/informacoes-legais/#acessibilidade',
           },
         },
       },
@@ -193,23 +193,23 @@ const pages = {
         links: {
           1: {
             label: 'Início',
-            url: '#',
+            url: '/',
           },
           2: {
             label: 'Sobre',
-            url: '#',
+            url: '/#sobre',
           },
           3: {
             label: 'Serviços',
-            url: '#',
+            url: '/#servicos',
           },
           4: {
             label: 'Portfólio',
-            url: '#',
+            url: '/#portfolio',
           },
           5: {
             label: 'Contato',
-            url: '#',
+            url: '/##contato',
           },
         },
       },
