@@ -1,6 +1,7 @@
 <template>
   <main class="relative">
     <NuxtLoadingIndicator />
+
     <div class="top-0 bg-primary">
       <div
         class="mx-auto hidden w-full max-w-7xl flex-row justify-end gap-2 px-2 py-4 text-white md:flex">
@@ -10,7 +11,17 @@
       </div>
     </div>
     <HomeTopBar />
-    <HomeHeroSection />
+    <div class="relative -mt-20 bg-primary">
+      <HomeHeroSection class="z-10" />
+      <div class="absolute inset-0 -mt-20 overflow-hidden">
+        <NuxtImg
+          src="/img/bg-background-left.png"
+          class="absolute -left-48 -top-24 hidden h-[90vh] md:block" />
+        <NuxtImg
+          src="/img/bg-background-right.png"
+          class="absolute -bottom-24 -right-96 hidden h-[90vh] md:block" />
+      </div>
+    </div>
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
