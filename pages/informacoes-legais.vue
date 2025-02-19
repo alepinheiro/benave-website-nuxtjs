@@ -10,19 +10,24 @@
     </div>
     <HomeTopBar class="-mt-20" />
 
-    <section class="mx-auto max-w-7xl px-5 py-12">
+    <section class="mx-auto max-w-7xl px-5 py-6 pb-12">
       <Tabs
+        v-model="activeTab"
         default-value="privacy"
         class="gap-2 md:grid md:grid-cols-4"
         orientation="vertical">
         <TabsList class="mt-2 grid h-fit w-full grid-cols-1">
-          <TabsTrigger value="privacy"> Política de Privacidade </TabsTrigger>
-          <TabsTrigger value="terms-of-use"> Termos de Uso </TabsTrigger>
-          <TabsTrigger value="cookies"> Política de cookies </TabsTrigger>
-          <TabsTrigger value="accessibility"> Acessibilidade </TabsTrigger>
+          <TabsTrigger value="#politica-de-privacidade">
+            Política de Privacidade
+          </TabsTrigger>
+          <TabsTrigger value="#termos-de-uso"> Termos de Uso </TabsTrigger>
+          <TabsTrigger value="#politica-de-cookies">
+            Política de cookies
+          </TabsTrigger>
+          <TabsTrigger value="#acessibilidade"> Acessibilidade </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="privacy" class="col-span-3">
+        <TabsContent value="#politica-de-privacidade" class="col-span-3">
           <Card>
             <CardHeader>
               <CardTitle>Política de Privacidade</CardTitle>
@@ -170,7 +175,7 @@
           </Card>
         </TabsContent>
 
-        <TabsContent value="terms-of-use" class="col-span-3">
+        <TabsContent value="#termos-de-uso" class="col-span-3">
           <Card>
             <CardHeader>
               <CardTitle>Termos de Uso</CardTitle>
@@ -251,7 +256,7 @@
           </Card>
         </TabsContent>
 
-        <TabsContent value="cookies" class="col-span-3">
+        <TabsContent value="#politica-de-cookies" class="col-span-3">
           <Card>
             <CardHeader>
               <CardTitle>Política de Cookies</CardTitle>
@@ -347,7 +352,7 @@
           </Card>
         </TabsContent>
 
-        <TabsContent value="accessibility" class="col-span-3">
+        <TabsContent value="#acessibilidade" class="col-span-3">
           <Card>
             <CardHeader>
               <CardTitle>Acessibilidade</CardTitle>
@@ -422,4 +427,8 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  const route = useRoute();
+
+  const activeTab = ref(route.hash ?? 'politica-de-privacidade');
+</script>
