@@ -25,18 +25,20 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
-    <div class="hidden">
+    <template v-if="isDevelopment">
       <ClientOnly fallbackTag="span">
         <LazyHomeTheBlog />
         <template #fallback>
           <p>Loading posts...</p>
         </template>
       </ClientOnly>
-    </div>
+    </template>
     <LazyHomeTheTestimonials />
     <LazyHomeCallToAction />
     <LazyHomeTheFooter />
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const isDevelopment = process.env.NODE_ENV === 'development';
+</script>
