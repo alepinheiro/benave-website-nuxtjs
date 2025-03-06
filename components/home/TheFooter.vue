@@ -88,21 +88,22 @@
 
     <div class="my-10 border-b border-zinc-200"></div>
 
-    <div class="pb-8 text-center text-xs font-medium">
+    <div class="flex flex-col gap-2 pb-8 text-center text-xs font-medium">
+      <NuxtLink
+        :to="$t('pages.home.footer.about.links.1.url')"
+        class="underline">
+        {{ $t('pages.home.footer.legalInfo.lgpd') }}
+      </NuxtLink>
       <p>
-        {{ $t('pages.home.footer.legalInfo.socialReason') }}
-      </p>
-      <br />
-      <p class="pb-4">
         {{
           $t('pages.home.footer.legalInfo.year', {
             year: new Date().getFullYear(),
           })
         }}
       </p>
-      <a href="#" class="underline">
-        {{ $t('pages.home.footer.legalInfo.lgpd') }}
-      </a>
+      <p>
+        {{ $t('pages.home.footer.legalInfo.socialReason') }}
+      </p>
     </div>
   </section>
 </template>

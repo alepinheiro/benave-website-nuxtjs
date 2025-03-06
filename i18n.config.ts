@@ -242,8 +242,8 @@ const pages = {
         },
       },
       legalInfo: {
-        socialReason: 'PABLO YURI BENAVENUTO DOS SANTOS 46.552.830/0001-22',
-        year: '{year} © BENAVÊ. Todos os direitos reservados.',
+        socialReason: '46.552.830/0001-22',
+        year: '{year} © BENAVÊ ENGENHARIA. Todos os direitos reservados.',
         lgpd: 'Leia nosso Aviso de Privacidade e a Política de Cookies.',
       },
     },

@@ -8,15 +8,16 @@
           <Icon
             :name="$t('icons.whatsapp')"
             class="h-8 w-8 shrink-0 md:hidden" />
-          <div>
+          <div class="md:hidden">
             <div>
               <Button
                 size="icon"
+                title="Abrir menu"
                 variant="ghost"
                 @click="menuIsOpen = !menuIsOpen">
                 <Icon
                   :name="!menuIsOpen ? $t('icons.menu') : 'iconoir:xmark'"
-                  class="h-8 w-8 shrink-0 md:hidden" />
+                  class="h-8 w-8 shrink-0" />
               </Button>
             </div>
           </div>
@@ -28,7 +29,7 @@
               class="min-w-24 lg:min-w-48">
               <div class="flex flex-row items-center justify-center">
                 <NuxtLink
-                  :to="$t(`pages.home.topBar.menu.links.${item + 1}.url`)"
+                  :to="'/' + $t(`pages.home.topBar.menu.links.${item + 1}.url`)"
                   :external="true"
                   class="mx-auto">
                   {{ $t(`pages.home.topBar.menu.links.${item + 1}.label`) }}
