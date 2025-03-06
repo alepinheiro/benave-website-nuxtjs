@@ -2,10 +2,25 @@
   <main class="relative">
     <div class="top-0 bg-primary">
       <div
-        class="mx-auto hidden w-full max-w-7xl flex-row justify-end gap-2 px-2 py-4 text-white md:flex">
-        <Icon :name="$t('icons.whatsapp')" class="h-8 w-8 shrink-0" />
-        <Icon :name="$t('icons.instagram')" class="h-8 w-8 shrink-0" />
-        <Icon :name="$t('icons.linkedin')" class="h-8 w-8 shrink-0" />
+        class="sticky top-0 z-50 mx-auto hidden w-full max-w-7xl flex-row justify-end gap-2 px-2 py-4 text-white md:flex">
+        <a
+          :href="$t('pages.home.footer.social.links.1.url')"
+          target="_blank"
+          rel="noopener noreferrer">
+          <Icon :name="$t('icons.whatsapp')" class="h-8 w-8 shrink-0" />
+        </a>
+        <a
+          :href="$t('pages.home.footer.social.links.2.url')"
+          target="_blank"
+          rel="noopener noreferrer">
+          <Icon :name="$t('icons.instagram')" class="h-8 w-8 shrink-0" />
+        </a>
+        <a
+          :href="$t('pages.home.footer.social.links.3.url')"
+          target="_blank"
+          rel="noopener noreferrer">
+          <Icon :name="$t('icons.linkedin')" class="h-8 w-8 shrink-0" />
+        </a>
       </div>
     </div>
     <HomeTopBar />
