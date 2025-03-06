@@ -49,9 +49,9 @@
                   width="80"
                   class="h-12 w-12 rounded-full object-cover" />
                 <div class="flex flex-col overflow-hidden">
-                  <h4 class="truncate text-xl font-bold">
+                  <h3 class="truncate text-xl font-bold">
                     {{ $t('pages.home.testimonials.' + slide + '.name') }}
-                  </h4>
+                  </h3>
                   <p class="truncate text-sm">
                     {{ $t('pages.home.testimonials.' + slide + '.job') }}
                   </p>
