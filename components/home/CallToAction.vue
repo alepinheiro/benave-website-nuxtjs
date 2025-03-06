@@ -7,12 +7,18 @@
           <h2 class="text-center text-2xl font-bold text-white md:text-start">
             {{ $t('pages.home.callToAction.1.title') }}
           </h2>
-          <Button variant="ghost" class="hidden md:flex md:text-white">
-            {{ $t('pages.home.callToAction.1.email') }}
+          <Button variant="ghost" class="hidden md:flex md:text-white" asChild>
+            <a
+              :href="$t('pages.home.footer.social.links.4.url')"
+              target="_blank">
+              {{ $t('pages.home.callToAction.1.email') }}
+            </a>
           </Button>
         </div>
-        <Button variant="inverted" class="hidden md:flex">
-          {{ $t('pages.home.callToAction.1.phone') }}
+        <Button variant="inverted" class="hidden md:flex" asChild>
+          <a :href="$t('pages.home.footer.social.links.1.url')" target="_blank">
+            {{ $t('pages.home.callToAction.1.phone') }}
+          </a>
         </Button>
       </div>
     </div>
@@ -22,11 +28,15 @@
         <h3 class="text-center text-xl font-bold">
           {{ $t('pages.home.callToAction.1.tagline') }}
         </h3>
-        <Button variant="inverted" class="mx-auto w-fit text-center">
-          {{ $t('pages.home.callToAction.1.phone') }}
+        <Button variant="inverted" class="mx-auto w-fit text-center" asChild>
+          <a :href="$t('pages.home.footer.social.links.1.url')" target="_blank">
+            {{ $t('pages.home.callToAction.1.phone') }}
+          </a>
         </Button>
-        <Button variant="link" class="text-white">
-          {{ $t('pages.home.callToAction.1.email') }}
+        <Button variant="link" class="text-white" asChild>
+          <a :href="$t('pages.home.footer.social.links.4.url')" target="_blank">
+            {{ $t('pages.home.callToAction.1.email') }}
+          </a>
         </Button>
       </div>
     </div>
