@@ -17,6 +17,7 @@
         "nuxt": "^3.15.4",
         "nuxt-aos": "1.2.5",
         "nuxt-swiper": "2.0.0",
+        "nuxt-vitalizer": "0.10.0",
         "radix-vue": "^1.9.10",
         "shadcn-nuxt": "^0.10.4",
         "tailwind-merge": "^2.5.5",
@@ -1417,6 +1418,8 @@
     "nuxt-aos": ["nuxt-aos@1.2.5", "", { "dependencies": { "@nuxt/devtools-kit": "^1.3.9", "@nuxt/kit": "^3.12.3", "aos": "^2.3.4" } }, "sha512-tNEXMOKijCg+SygLvjp2VbEy7yQcC6ertzI23bCa6DPlu134bfzSYUGOJRSFSKtYjnrqIW7MzLpqPTfTwd8A3Q=="],
 
     "nuxt-swiper": ["nuxt-swiper@2.0.0", "", { "dependencies": { "@nuxt/kit": "^3.14.159", "swiper": "^11.1.14" } }, "sha512-9NJ7ipoo3sBqFOtnYccVjVPuywGqY1vA82R2YinHo/U4Mw8c0Uy/Q+ep7qihLWr/3wZq9BqFOKPuWKw5xKl77Q=="],
+
+    "nuxt-vitalizer": ["nuxt-vitalizer@0.10.0", "", { "dependencies": { "@nuxt/kit": "^3.12.2", "defu": "^6.1.4", "knitwork": "^1.1.0" } }, "sha512-z5leudr8wD2msKl7ETLGUICSOVoXVLMA8bAeRuWN4/UuYl7g7G2k7Idzl1z8ft/VmoYZ9ld3J0/2UZOZuxxzog=="],
 
     "nypm": ["nypm@0.5.2", "", { "dependencies": { "citty": "^0.1.6", "consola": "^3.4.0", "pathe": "^2.0.2", "pkg-types": "^1.3.1", "tinyexec": "^0.3.2", "ufo": "^1.5.4" }, "bin": { "nypm": "dist/cli.mjs" } }, "sha512-AHzvnyUJYSrrphPhRWWZNcoZfArGNp3Vrc4pm/ZurO74tYNTgAPrEyBQEKy+qioqmWlPXwvMZCG2wOaHlPG0Pw=="],
 

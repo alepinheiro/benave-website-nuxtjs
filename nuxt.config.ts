@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     'nuxt-swiper',
     'nuxt-aos',
+    'nuxt-vitalizer',
   ],
   shadcn: {
     /**
@@ -58,4 +59,3 @@ export default defineNuxtConfig({
     },
   },
 });
-
