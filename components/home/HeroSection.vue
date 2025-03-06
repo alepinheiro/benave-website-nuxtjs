@@ -68,6 +68,7 @@
         src="/img/hero-background@3x.png"
         height="35"
         width="800"
+        role="presentation"
         class="-ml-20 h-fit w-fit object-contain pt-4 md:hidden" />
 
       <h2 class="py-8 text-center text-xl leading-5 text-white md:hidden">
