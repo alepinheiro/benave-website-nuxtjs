@@ -3,8 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   runtimeConfig: {
     public: {
-      blogUrl:
-        'https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/posts',
+      blogUrl: import.meta.env.BLOG_URL,
     },
   },
   devtools: { enabled: true },
