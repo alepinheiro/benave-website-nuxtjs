@@ -54,6 +54,7 @@
               <div class="h-60 w-full md:h-96">
                 <NuxtImg
                   :src="$t(`pages.home.heroSection.slides.${index + 1}.img`)"
+                  :alt="$t(`pages.home.heroSection.slides.${index + 1}.alt`)"
                   height="300"
                   width="300"
                   class="h-60 w-full rounded-3xl object-cover md:h-96" />

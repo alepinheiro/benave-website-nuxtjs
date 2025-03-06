@@ -46,6 +46,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'Benavê Engenharia',
+      htmlAttrs: {
+        lang: 'pt-BR',
+      },
       meta: [
         {
           name: 'description',

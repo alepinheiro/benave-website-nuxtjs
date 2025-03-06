@@ -13,9 +13,11 @@
       <HomeHeroSection class="z-10" />
       <div class="absolute inset-0 -mt-20 overflow-hidden">
         <NuxtImg
+          role="presentation"
           src="/img/bg-background-left.png"
           class="absolute -left-48 -top-24 hidden h-[90vh] md:block" />
         <NuxtImg
+          role="presentation"
           src="/img/bg-background-right.png"
           class="absolute -bottom-24 -right-96 hidden h-[90vh] md:block" />
       </div>

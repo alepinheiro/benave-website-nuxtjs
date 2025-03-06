@@ -44,6 +44,7 @@
               <div class="flex flex-row items-center gap-2">
                 <NuxtImg
                   :src="$t('pages.home.testimonials.' + slide + '.img')"
+                  :alt="$t('pages.home.testimonials.' + slide + '.name')"
                   height="80"
                   width="80"
                   class="h-12 w-12 rounded-full object-cover" />

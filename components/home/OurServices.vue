@@ -14,7 +14,9 @@
           {{ $t('pages.home.services.electricPanels.title.suffix') }}
         </b>
       </h3>
-      <NuxtImg :src="$t('pages.home.services.electricPanels.img')" />
+      <NuxtImg
+        :src="$t('pages.home.services.electricPanels.img')"
+        :alt="$t('pages.home.services.electricPanels.alt')" />
       <div class="w-full">
         <div class="flex flex-col items-center gap-4 md:w-5/6">
           <h3 class="hidden md:block">
@@ -72,7 +74,9 @@
         </b>
       </h3>
 
-      <NuxtImg :src="$t('pages.home.services.electricProjects.img')" />
+      <NuxtImg
+        :src="$t('pages.home.services.electricProjects.img')"
+        :alt="$t('pages.home.services.electricProjects.alt')" />
 
       <div class="w-full">
         <div class="mx-auto flex flex-col items-center gap-4 md:w-5/6">
@@ -114,7 +118,9 @@
           {{ $t('pages.home.services.memorialDescription.title.suffix') }}
         </b>
       </h3>
-      <NuxtImg :src="$t('pages.home.services.memorialDescription.img')" />
+      <NuxtImg
+        :src="$t('pages.home.services.memorialDescription.img')"
+        :alt="$t('pages.home.services.memorialDescription.alt')" />
 
       <div class="w-full">
         <div class="flex flex-col items-center gap-4 md:w-5/6">
@@ -154,7 +160,9 @@
           {{ $t('pages.home.services.eletroCenter.title.suffix') }}
         </b>
       </h3>
-      <NuxtImg :src="$t('pages.home.services.eletroCenter.img')" />
+      <NuxtImg
+        :src="$t('pages.home.services.eletroCenter.img')"
+        :alt="$t('pages.home.services.eletroCenter.alt')" />
 
       <div class="w-full">
         <div class="mx-auto flex flex-col items-center gap-4 md:w-5/6">
@@ -188,6 +196,7 @@
     <NuxtImg
       width="900"
       height="1200"
+      role="presentation"
       src="/img/services-background-logo.png"
       class="absolute -bottom-72 -left-40 -z-10 object-contain lg:-bottom-96" />
   </section>

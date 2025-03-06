@@ -49,6 +49,7 @@
             <div class="flex h-72 flex-col gap-8 lg:h-96">
               <NuxtImg
                 :src="$t('pages.home.portfolio.cases.' + slide + '.img')"
+                :alt="$t('pages.home.portfolio.cases.' + slide + '.alt')"
                 height="600"
                 width="300"
                 class="h-72 w-full rounded-3xl object-cover lg:h-56" />

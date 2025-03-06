@@ -46,6 +46,7 @@ const pages = {
           suffix: 'painéis elétricos',
         },
         img: '/img/services-1.png',
+        alt: '/img/services-1.png',
         summary:
           'Concepção e detalhamento do conjunto de componentes que garantem o controle e distribuição eficiente de energia elétrica, sempre seguindo rigorosamente as normas técnicas.',
         services: {
@@ -63,6 +64,7 @@ const pages = {
           suffix: 'Elétricos',
         },
         img: '/img/services-2.png',
+        alt: '/img/services-2.png',
         summary:
           'Desenho técnico e planejamento de todas as informações pertinentes e necessárias para a execução da obra, elaborado em software BIM, garantindo eficiência e precisão.',
         services: {
@@ -79,6 +81,7 @@ const pages = {
           suffix: 'de Cálculo',
         },
         img: '/img/services-3.png',
+        alt: '/img/services-3.png',
         summary:
           'Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.',
         services: {
@@ -93,6 +96,7 @@ const pages = {
           suffix: '',
         },
         img: '/img/services-4.png',
+        alt: '/img/services-4.png',
         summary:
           'Equipamentos modulares que proporcionam flexibilidade para atender uma ampla gama de aplicações em segmentos variados, como usinas de etanol, siderurgias, mineradoras.',
         services: {
@@ -111,22 +115,27 @@ const pages = {
         1: {
           img: 'https://unsplash.it/900/600?random=13&gravity=center',
           title: 'Quadro Geral de Baixa Tensão',
+          alt: 'Quadro Geral de Baixa Tensão',
         },
         2: {
           img: 'https://unsplash.it/900/600?random=14&gravity=center',
           title: 'Quadro de Distribuição de Tomadas',
+          alt: 'Quadro de Distribuição de Tomadas',
         },
         3: {
           img: 'https://unsplash.it/900/600?random=15&gravity=center',
           title: 'Quadro de Distribuição de Luz',
+          alt: 'Quadro de Distribuição de Luz',
         },
         4: {
           img: 'https://unsplash.it/900/600?random=16&gravity=center',
           title: 'Quadro de Transf. Automática',
+          alt: 'Quadro de Transf. Automática',
         },
         5: {
           img: 'https://unsplash.it/900/600?random=17&gravity=center',
           title: 'Quadro de Tomada Monofásico',
+          alt: 'Quadro de Tomada Monofásico',
         },
       },
     },
