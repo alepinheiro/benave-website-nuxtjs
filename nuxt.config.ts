@@ -54,6 +54,18 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Transformamos ideias em energia, soluções em inovação.',
         },
+        // Open Graph
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Benavê Engenharia' },
+        { property: 'og:title', content: 'Benavê Engenharia' },
+        {
+          property: 'og:description',
+          content: 'Transformamos ideias em energia, soluções em inovação.',
+        },
+        { property: 'og:url', content: 'https://benave.com.br' },
+        { property: 'og:image', content: '/img/og-image.png' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
       ],
     },
   },
