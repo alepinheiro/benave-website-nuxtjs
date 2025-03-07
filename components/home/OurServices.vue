@@ -177,7 +177,7 @@
           </p>
           <ul class="flex w-fit flex-col items-center gap-2 text-center">
             <li
-              v-for="item of [1, 2, 3, 4]"
+              v-for="item of [1, 2, 3, 4, 5]"
               :key="item"
               class="mx-auto flex flex-row items-center gap-2">
               <Icon
@@ -185,7 +185,9 @@
                 class="h-4 w-4 shrink-0 bg-gradient-to-t from-primary to-primary-800" />
 
               <p>
-                {{ $t('pages.home.services.eletroCenter.services.' + item) }}
+                {{
+                  $t('pages.home.services.electricProjects.services.' + item)
+                }}
               </p>
             </li>
           </ul>
