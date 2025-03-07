@@ -153,7 +153,7 @@
       </div>
     </div>
 
-    <div class="service" data-aos="fade-in">
+    <div v-if="false" class="service" data-aos="fade-in">
       <h3 class="md:hidden">
         {{ $t('pages.home.services.eletroCenter.title.prefix') }}
         <b>
