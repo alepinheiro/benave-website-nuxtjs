@@ -12,8 +12,9 @@
 
     <section class="mx-auto max-w-7xl px-5 py-6 pb-12">
       <Tabs
+        v-if="activeTab"
         v-model="activeTab"
-        default-value="privacy"
+        default-value="#politica-de-privacidade"
         class="gap-2 md:grid md:grid-cols-4"
         orientation="vertical">
         <TabsList class="mt-2 grid h-fit w-full grid-cols-1">
@@ -430,5 +431,5 @@
 <script lang="ts" setup>
   const route = useRoute();
 
-  const activeTab = ref(route.hash ?? 'politica-de-privacidade');
+  const activeTab = ref(route.hash ?? '#politica-de-privacidade');
 </script>
