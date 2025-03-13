@@ -17,8 +17,8 @@
           <NuxtImg
             width="300"
             height="200"
-            :src="post.jetpack_featured_media_url"
-            :alt="post.excerpt.rendered"
+            :src="post.featuredImage"
+            :alt="post.excerpt"
             :class="{
               'h-full': props.orientation === 'row',
               'max-h-96': props.orientation === 'column',
@@ -36,14 +36,14 @@
         <CardHeader class="pb-4">
           <NuxtLink :to="`/blog/post/${post.slug}`">
             <slot name="title">
-              <CardTitle v-html="post.title.rendered" class="line-clamp-2">
+              <CardTitle class="line-clamp-2">
+                {{ post.title }}
               </CardTitle>
             </slot>
           </NuxtLink>
           <slot name="description">
-            <CardDescription
-              v-html="post.excerpt.rendered"
-              class="line-clamp-2">
+            <CardDescription class="line-clamp-2">
+              {{ post.excerpt }}
             </CardDescription>
           </slot>
         </CardHeader>
@@ -62,10 +62,10 @@
 
 <script lang="ts" setup>
   import type { PropType } from 'vue';
-  import type { WPPost } from '~/types/wordPress';
+  import type { FormattedPost } from '~/server/api/posts';
   const props = defineProps({
     post: {
-      type: Object as PropType<WPPost>,
+      type: Object as PropType<FormattedPost>,
       required: true,
     },
     orientation: {

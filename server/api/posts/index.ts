@@ -1,5 +1,29 @@
 import { WPPost } from '~/types/wordPress';
 
+export type FormattedPost = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  date: string;
+  featuredImage: string | undefined;
+  categories: Array<{
+    id: string;
+    link: string;
+    name: string;
+    slug: string;
+    taxonomy: string;
+  }>;
+};
+
+function cleanText(excerpt: string) {
+  return excerpt
+    .replace(/<[^>]+>/g, ' ') // Remove tags HTML
+    .replace(/&[^;]+;/g, ' ') // Remove entidades HTML
+    .replace(/Continue reading.*/i, '') // Remove "Continue reading" e o que vier depois
+    .trim(); // Remove espaços extras
+}
+
 export default defineEventHandler(async (event) => {
   try {
     const query = getQuery(event);
@@ -17,21 +41,17 @@ export default defineEventHandler(async (event) => {
       },
     );
 
-    // Formata os posts para o frontend
-    const formattedPosts = posts.map((post) => ({
+    const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
       id: post.id,
-      title: post.title.rendered,
+      title: cleanText(post.title.rendered),
       slug: post.slug,
-      excerpt: post.excerpt.rendered,
+      excerpt: cleanText(post.excerpt.rendered),
       date: post.date,
-      featuredImage: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
+      featuredImage: post.jetpack_featured_media_url,
       categories: post._embedded?.['wp:term']?.[0] || [],
     }));
 
-    return {
-      posts: formattedPosts,
-      hasMore: posts.length === perPage,
-    };
+    return formattedPosts;
   } catch (error) {
     console.error('Erro ao buscar posts do WordPress:', error);
     throw createError({
