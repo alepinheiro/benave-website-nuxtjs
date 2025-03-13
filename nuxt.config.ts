@@ -69,4 +69,13 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  routeRules: {
+    '/api/posts/**': {
+      cache: {
+        maxAge: 60 * 60,
+        // other options like name, group, swr...
+      },
+    },
+  },
 });

@@ -23,6 +23,31 @@ export type WPPost = {
   _embedded: WPPostEmbedded;
   jetpack_featured_media_url: string;
 };
+
+export type WPPage = {
+  id: string;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  excerpt: {
+    rendered: string;
+  };
+  date: string;
+  date_gmt: string;
+  format: string;
+  modified: string;
+  modified_gmt: string;
+  status: string;
+  sticky: boolean;
+  type: string;
+  link: string;
+  _embedded: WPPostEmbedded;
+  jetpack_featured_media_url: string;
+};
 export type WPMediaDetailSize = {
   file: string;
   height: number;
