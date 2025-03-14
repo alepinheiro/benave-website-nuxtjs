@@ -2,6 +2,7 @@
   <div>
     <BlogTopBar />
     <BlogHeroSection />
+    <BlogMostRead />
   </div>
 </template>
 

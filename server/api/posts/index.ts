@@ -2,10 +2,11 @@ import { WPPost } from '~/types/wordPress';
 
 export type FormattedPost = {
   id: string;
-  title: string;
   slug: string;
-  excerpt: string;
   date: string;
+  title: string;
+  excerpt: string;
+  createdAt: string;
   featuredImage: string | undefined;
   categories: Array<{
     id: string;
@@ -16,6 +17,11 @@ export type FormattedPost = {
   }>;
 };
 
+/**
+ * Remove caracteres indesejados do texto
+ * @param excerpt
+ * @returns
+ */
 function cleanText(excerpt: string) {
   return excerpt
     .replace(/<[^>]+>/g, ' ') // Remove tags HTML
@@ -24,14 +30,19 @@ function cleanText(excerpt: string) {
     .trim(); // Remove espaços extras
 }
 
+/**
+ * Rota para buscar os posts do WordPress
+ */
 export default defineEventHandler(async (event) => {
+  const config = useRuntimeConfig();
   try {
     const query = getQuery(event);
     const page = Number(query.page) || 1;
-    const perPage = 9;
+    const perPage = Number(query.perPage) || 9;
+    console.log(config.public.blogUrl);
 
     const posts = await $fetch<Array<WPPost>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/posts`,
+      `${config.public.blogUrl}/posts`,
       {
         params: {
           page,
@@ -43,10 +54,11 @@ export default defineEventHandler(async (event) => {
 
     const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
       id: post.id,
-      title: cleanText(post.title.rendered),
-      slug: post.slug,
-      excerpt: cleanText(post.excerpt.rendered),
       date: post.date,
+      slug: post.slug,
+      createdAt: post.date,
+      title: cleanText(post.title.rendered),
+      excerpt: cleanText(post.excerpt.rendered),
       featuredImage: post.jetpack_featured_media_url,
       categories: post._embedded?.['wp:term']?.[0] || [],
     }));

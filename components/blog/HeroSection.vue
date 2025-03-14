@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div class="mx-auto max-w-7xl px-4 py-8">
       <h1 class="mb-8 text-4xl font-bold">Artigos em destaque</h1>
 
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

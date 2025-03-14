@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   runtimeConfig: {
     public: {
-      blogUrl: import.meta.env.BLOG_URL,
+      blogUrl: import.meta.env.NUXT_BLOG_URL,
     },
   },
   devtools: { enabled: true },
@@ -74,7 +74,6 @@ export default defineNuxtConfig({
     '/api/posts/**': {
       cache: {
         maxAge: 60 * 60,
-        // other options like name, group, swr...
       },
     },
   },
