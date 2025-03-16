@@ -39,13 +39,15 @@ export default defineEventHandler(async (event) => {
     const query = getQuery(event);
     const page = Number(query.page) || 1;
     const perPage = Number(query.perPage) || 9;
-    console.log(config.public.blogUrl);
+    const categories = Number(query.categories) || undefined;
+    console.log(query);
 
     const posts = await $fetch<Array<WPPost>>(
       `${config.public.blogUrl}/posts`,
       {
         params: {
           page,
+          categories,
           per_page: perPage,
           _embed: 'wp:featuredmedia,wp:term',
         },

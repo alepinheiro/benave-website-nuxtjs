@@ -40,9 +40,13 @@
 <script lang="ts" setup>
   import type { FormattedPost } from '~/server/api/posts';
 
-  const { data } = await useFetch<Array<FormattedPost>>(
-    `/api/posts?page=1&perPage=3`,
-  );
+  const query = new URLSearchParams({
+    page: `${1}`,
+    perPage: `${3}`,
+    categories: `${['humor']}`,
+  });
+
+  const { data } = await useFetch<Array<FormattedPost>>(`/api/posts?${query}`);
   const posts = computed(() => {
     if (!data.value) return null;
     return data.value;

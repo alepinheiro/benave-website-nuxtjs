@@ -70,11 +70,11 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/api/posts/**': {
-      cache: {
-        maxAge: 60 * 60,
-      },
-    },
-  },
+  // routeRules: {
+  //   '/api/posts/**': {
+  //     cache: {
+  //       maxAge: 60 * 60,
+  //     },
+  //   },
+  // },
 });
