@@ -24,7 +24,7 @@ export default defineEventHandler(async (event) => {
 
     // Busca posts da categoria
     const posts = await $fetch<Array<WPPost>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/posts`,
+      `${config.public.blogUrl}/posts`,
       {
         params: {
           categories: category.id,
