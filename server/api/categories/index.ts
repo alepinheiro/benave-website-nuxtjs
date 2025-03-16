@@ -2,8 +2,9 @@ import { WPCategory } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
+    const config = useRuntimeConfig();
     const categories = await $fetch<Array<WPCategory>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/categories`,
+      `${config.public.blogUrl}/categories`,
     );
 
     return categories;

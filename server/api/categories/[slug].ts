@@ -2,11 +2,12 @@ import { WPPost, WPCategory } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
+    const config = useRuntimeConfig();
     const slug = event.context.params?.slug;
 
     // Busca a categoria primeiro
     const categories = await $fetch<Array<WPCategory>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/categories`,
+      `${config.public.blogUrl}/categories`,
       {
         params: { slug },
       },

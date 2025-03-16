@@ -2,10 +2,11 @@ import { WPPost } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
+    const config = useRuntimeConfig();
     const slug = event.context.params?.slug;
 
     const posts = await $fetch<Array<WPPost>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/posts`,
+      `${config.public.blogUrl}/posts`,
       {
         params: {
           slug,

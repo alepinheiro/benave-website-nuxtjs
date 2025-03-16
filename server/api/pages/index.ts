@@ -2,12 +2,13 @@ import type { WPPage } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
+    const config = useRuntimeConfig();
     const query = getQuery(event);
     const page = Number(query.page) || 1;
     const perPage = 9;
 
     const pages = await $fetch<Array<WPPage>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/pages`,
+      `${config.public.blogUrl}/pages`,
       {
         params: {
           page,
