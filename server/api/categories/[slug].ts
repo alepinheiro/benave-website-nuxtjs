@@ -1,3 +1,5 @@
+import { cleanText } from '~/functions/cleanText';
+import { FormattedPost } from '~/server/api/posts';
 import { WPPost, WPCategory } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
@@ -34,13 +36,14 @@ export default defineEventHandler(async (event) => {
     );
 
     // Formata os posts para o frontend
-    const formattedPosts = posts.map((post) => ({
+    const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
       id: post.id,
-      title: post.title.rendered,
-      slug: post.slug,
-      excerpt: post.excerpt.rendered,
       date: post.date,
-      featuredImage: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
+      slug: post.slug,
+      createdAt: post.date,
+      title: cleanText(post.title.rendered),
+      excerpt: cleanText(post.excerpt.rendered),
+      featuredImage: post.jetpack_featured_media_url,
       categories: post._embedded?.['wp:term']?.[0] || [],
     }));
 

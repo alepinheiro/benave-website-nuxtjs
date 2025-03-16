@@ -3,7 +3,9 @@
     <div
       class="relative z-30 mx-auto h-full w-full max-w-7xl rounded-xl bg-white px-6 py-2 text-primary shadow-md">
       <div class="flex flex-row items-center justify-between">
-        <TheLogo type="full" class="w-fit" width="150" height="48" />
+        <NuxtLink to="/blog/">
+          <TheLogo type="full" class="w-fit" width="150" height="48" />
+        </NuxtLink>
         <div class="z-30 flex flex-row items-center gap-4">
           <Icon
             :name="$t('icons.whatsapp')"
@@ -22,18 +24,18 @@
             </div>
           </div>
 
-          <div v-if="pages" class="hidden flex-row gap-2 divide-x md:flex">
-            <div
-              v-for="item in pages"
-              :key="item.id"
-              class="min-w-24 lg:min-w-48">
-              <div class="flex flex-row items-center justify-center">
-                <NuxtLink :to="'/'" :external="true" class="mx-auto">
+          <ul v-if="pages" class="hidden flex-row gap-2 divide-x md:flex">
+            <li v-for="item in pages" :key="item.id" class="px-5">
+              <div class="flex flex-1 flex-row items-center justify-center">
+                <NuxtLink
+                  :to="`/blog/categorias/${item.slug}`"
+                  :external="true"
+                  class="mx-auto">
                   {{ item.title }}
                 </NuxtLink>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -52,7 +54,7 @@
             <li v-for="item in pages" key="item" class="flex w-full flex-col">
               <NuxtLink
                 class="w-full"
-                :to="'/'"
+                :to="`/blog/categorias/${item.slug}`"
                 :external="true"
                 @click="menuIsOpen = false">
                 {{ item.title }}

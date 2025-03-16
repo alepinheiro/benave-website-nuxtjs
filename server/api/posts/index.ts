@@ -1,3 +1,4 @@
+import { cleanText } from '~/functions/cleanText';
 import { WPPost } from '~/types/wordPress';
 
 export type FormattedPost = {
@@ -16,19 +17,6 @@ export type FormattedPost = {
     taxonomy: string;
   }>;
 };
-
-/**
- * Remove caracteres indesejados do texto
- * @param excerpt
- * @returns
- */
-function cleanText(excerpt: string) {
-  return excerpt
-    .replace(/<[^>]+>/g, ' ') // Remove tags HTML
-    .replace(/&[^;]+;/g, ' ') // Remove entidades HTML
-    .replace(/Continue reading.*/i, '') // Remove "Continue reading" e o que vier depois
-    .trim(); // Remove espaços extras
-}
 
 /**
  * Rota para buscar os posts do WordPress

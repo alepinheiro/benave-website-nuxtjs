@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BlogTopBar />
+    <!-- <BlogTopBar /> -->
     <BlogHeroSection />
     <BlogMostRead />
     <div class="bg-gradient-to-b from-zinc-200 to-zinc-300 py-12">
@@ -14,10 +14,13 @@
         <BlogArticlesByCategory :category="Categories['normas-e-seguranca']" />
       </div>
     </div>
-    <LazyHomeTheFooter />
+    <!-- <LazyHomeTheFooter /> -->
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   import { Categories } from '~/types/Categories.enum';
+  definePageMeta({
+    layout: 'blog',
+  });
 </script>
