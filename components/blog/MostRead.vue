@@ -1,12 +1,13 @@
 <template>
   <section>
     <div class="relative z-0 overflow-hidden bg-primary py-12">
-      <div class="mx-auto flex max-w-7xl flex-row items-center gap-8 px-5">
+      <div
+        class="mx-auto flex max-w-7xl flex-col items-center gap-8 px-5 md:flex-row">
         <div class="flex w-auto flex-col gap-2 text-white">
           <h1 class="text-3xl font-bold">Mais lidas</h1>
           <h2 class="text-2xl">Confira as matérias mais lidas do mês.</h2>
         </div>
-        <div class="flex w-3/4 flex-row gap-4">
+        <div class="flex flex-col gap-4 md:w-3/4 md:flex-row">
           <Card v-for="post of posts" :key="post.id" class="w-full">
             <CardHeader class="p-2">
               <NuxtImg
