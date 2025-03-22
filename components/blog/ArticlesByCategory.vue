@@ -7,7 +7,8 @@
           {{ categoryName }}
         </h3>
       </div>
-      <div class="mx-auto flex flex-row items-stretch gap-2">
+      <div
+        class="mx-auto flex flex-col items-stretch gap-8 md:flex-row md:gap-2">
         <article v-for="post in posts" class="flex flex-1 flex-col gap-2">
           <NuxtImg
             :src="post.featuredImage"
