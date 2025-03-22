@@ -11,6 +11,12 @@
         :post="post"
         class="flex-1"
         orientation="column">
+        <template #image>
+          <NuxtImg
+            :src="post.featuredImage"
+            alt="Imagem do post"
+            class="h-48 w-full rounded object-cover" />
+        </template>
       </BlogThePost>
     </div>
   </div>

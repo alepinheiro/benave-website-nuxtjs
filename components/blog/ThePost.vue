@@ -10,7 +10,7 @@
         :to="`/blog/post/${post.slug}`"
         :class="{
           'w-48': props.orientation === 'row',
-          'w-full': props.orientation === 'column',
+          'max-h-96 w-full': props.orientation === 'column',
         }"
         class="h-auto overflow-hidden">
         <slot name="image">
