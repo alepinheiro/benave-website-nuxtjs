@@ -22,9 +22,8 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    const post = posts[0];
+    const [post] = posts;
 
-    // Formata o post para o frontend
     return {
       id: post.id,
       title: post.title.rendered,

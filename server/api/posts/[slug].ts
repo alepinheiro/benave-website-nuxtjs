@@ -1,4 +1,5 @@
-import { WPPost } from '~/types/wordPress';
+import { cleanText } from '~/functions/cleanText';
+import type { FormattedPost, WPPost } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
@@ -22,19 +23,19 @@ export default defineEventHandler(async (event) => {
       });
     }
 
-    const post = posts[0];
+    const [post] = posts;
 
-    // Formata o post para o frontend
     return {
       id: post.id,
-      title: post.title.rendered,
       slug: post.slug,
+      date: new Date(post.date),
+      createdAt: new Date(post.date),
       content: post.content.rendered,
-      excerpt: post.excerpt.rendered,
-      date: post.date,
-      featuredImage: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
+      title: cleanText(post.title.rendered),
+      excerpt: cleanText(post.excerpt.rendered),
+      featuredImage: post.jetpack_featured_media_url,
       categories: post._embedded?.['wp:term']?.[0] || [],
-    };
+    } satisfies FormattedPost;
   } catch (error) {
     console.error('Erro ao buscar post do WordPress:', error);
     throw createError({

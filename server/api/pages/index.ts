@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
         params: {
           page,
           per_page: perPage,
-          // _embed: 'wp:featuredmedia,wp:term',
+          _embed: 'wp:featuredmedia,wp:term',
         },
       },
     );

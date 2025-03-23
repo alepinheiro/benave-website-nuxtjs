@@ -126,3 +126,21 @@ export interface WPCategory {
   description: string;
   count: number;
 }
+
+export type FormattedPost = {
+  id: string;
+  slug: string;
+  date: Date;
+  title: string;
+  excerpt: string;
+  createdAt: Date;
+  content?: string;
+  featuredImage: string | undefined;
+  categories: Array<{
+    id: string;
+    link: string;
+    name: string;
+    slug: string;
+    taxonomy: string;
+  }>;
+};

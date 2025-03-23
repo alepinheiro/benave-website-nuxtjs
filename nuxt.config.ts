@@ -74,10 +74,10 @@ export default defineNuxtConfig({
     '/blog/categorias/pagina-inicial': {
       redirect: '/blog/',
     },
-    '/api/posts/**': {
-      cache: {
-        maxAge: 60 * 60,
-      },
-    },
+    // '/api/posts/**': {
+    //   cache: {
+    //     maxAge: 60 * 60,
+    //   },
+    // },
   },
 });

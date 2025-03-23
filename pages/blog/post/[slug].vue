@@ -4,7 +4,7 @@
     <header class="mb-8">
       <h1 class="mb-4 text-4xl font-bold">{{ post.title }}</h1>
       <div class="mb-4 flex items-center text-gray-600">
-        <span class="mr-4">{{ formatDate(post.date) }}</span>
+        <span class="mr-4">{{ $d(post.date) }}</span>
         <NuxtLink
           v-for="category in post.categories"
           :key="category.id"
@@ -13,17 +13,16 @@
           {{ category.name }}
         </NuxtLink>
       </div>
-      <img
-        v-if="post.featuredImage"
+      <NuxtImg
         :src="post.featuredImage"
         :alt="post.title"
         class="h-96 w-full rounded-lg object-cover" />
     </header>
 
-    <!-- Conteúdo do Post -->
-    <div class="prose prose-lg max-w-none" v-html="post.content"></div>
+    <div
+      class="prose prose-lg flex max-w-none flex-col gap-2"
+      v-html="post.content"></div>
 
-    <!-- Navegação entre Posts -->
     <nav class="mt-8 flex justify-between">
       <NuxtLink
         v-if="post.previous"
@@ -39,32 +38,27 @@
       </NuxtLink>
     </nav>
   </article>
+  <div class="px-5 pb-12">
+    <BlogArticlesByCategory :category="Categories['automacao-e-controle']" />
+  </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+  import { Categories } from '~/types/Categories.enum';
+  import { FormattedPost } from '~/types/wordPress';
+
   const route = useRoute();
-  const post = ref({});
+  definePageMeta({
+    layout: 'blog',
+  });
 
-  // Busca dados do post
-  async function fetchPost() {
-    try {
-      const data = await $fetch(`/api/posts/${route.params.slug}`);
-      post.value = data;
-    } catch (error) {
-      console.error('Erro ao buscar post:', error);
-    }
-  }
+  const { data } =
+    (await useFetch)<FormattedPost>`/api/posts/${route.params.slug}`;
+  const post = computed(() => {
+    if (!data.value) return null;
+    return data.value;
+  });
 
-  // Formata a data
-  function formatDate(date) {
-    return new Date(date).toLocaleDateString('pt-BR', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  }
-
-  // Define meta tags para SEO
   useHead(() => ({
     title: post.value.title,
     meta: [
@@ -75,8 +69,4 @@
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
   }));
-
-  onMounted(() => {
-    fetchPost();
-  });
 </script>

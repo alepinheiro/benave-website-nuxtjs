@@ -1,22 +1,5 @@
 import { cleanText } from '~/functions/cleanText';
-import { WPPost } from '~/types/wordPress';
-
-export type FormattedPost = {
-  id: string;
-  slug: string;
-  date: string;
-  title: string;
-  excerpt: string;
-  createdAt: string;
-  featuredImage: string | undefined;
-  categories: Array<{
-    id: string;
-    link: string;
-    name: string;
-    slug: string;
-    taxonomy: string;
-  }>;
-};
+import type { FormattedPost, WPPost } from '~/types/wordPress';
 
 /**
  * Rota para buscar os posts do WordPress
@@ -44,9 +27,9 @@ export default defineEventHandler(async (event) => {
 
     const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
       id: post.id,
-      date: post.date,
+      date: new Date(post.date),
       slug: post.slug,
-      createdAt: post.date,
+      createdAt: new Date(post.date),
       title: cleanText(post.title.rendered),
       excerpt: cleanText(post.excerpt.rendered),
       featuredImage: post.jetpack_featured_media_url,

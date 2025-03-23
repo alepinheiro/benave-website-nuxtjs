@@ -1,13 +1,11 @@
 import { cleanText } from '~/functions/cleanText';
-import { FormattedPost } from '~/server/api/posts';
-import { WPPost, WPCategory } from '~/types/wordPress';
+import type { WPPost, WPCategory, FormattedPost } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
     const config = useRuntimeConfig();
     const slug = event.context.params?.slug;
 
-    // Busca a categoria primeiro
     const categories = await $fetch<Array<WPCategory>>(
       `${config.public.blogUrl}/categories`,
       {
@@ -24,7 +22,6 @@ export default defineEventHandler(async (event) => {
 
     const category = categories[0];
 
-    // Busca posts da categoria
     const posts = await $fetch<Array<WPPost>>(
       `${config.public.blogUrl}/posts`,
       {
@@ -35,12 +32,11 @@ export default defineEventHandler(async (event) => {
       },
     );
 
-    // Formata os posts para o frontend
     const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
       id: post.id,
-      date: post.date,
+      date: new Date(post.date),
       slug: post.slug,
-      createdAt: post.date,
+      createdAt: new Date(post.date),
       title: cleanText(post.title.rendered),
       excerpt: cleanText(post.excerpt.rendered),
       featuredImage: post.jetpack_featured_media_url,

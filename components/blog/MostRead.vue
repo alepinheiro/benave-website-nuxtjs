@@ -20,7 +20,7 @@
                 {{ post.title }}
               </CardTitle>
               <CardDescription class="mt-auto">
-                {{ $d(new Date(post.createdAt)) }}
+                {{ $d(post.createdAt) }}
               </CardDescription>
             </CardContent>
           </Card>
