@@ -1,7 +1,9 @@
 <template>
-  <div>
+  <div class="px-5">
     <BlogTopBar />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <LazyHomeTheFooter />
   </div>
 </template>
