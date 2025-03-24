@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="ts">
-  import type { FormattedPost } from '~/server/api/posts';
+  import type { FormattedPost } from '~/types/wordPress';
 
   const page = ref(1);
 

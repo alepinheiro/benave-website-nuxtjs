@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto max-w-7xl px-2">
+  <div v-if="post" class="mx-auto max-w-7xl px-2">
     <NuxtImg
       :src="post.featuredImage"
       :alt="post.title"
@@ -29,7 +29,7 @@
           class="prose prose-lg flex max-w-none flex-col gap-2"
           v-html="post.content"></p>
 
-        <nav class="mt-8 flex justify-between">
+        <!-- <nav class="mt-8 flex justify-between">
           <NuxtLink
             v-if="post.previous"
             :to="`/blog/${post.previous.slug}`"
@@ -42,7 +42,7 @@
             class="text-blue-600 hover:underline">
             {{ post.next.title }} →
           </NuxtLink>
-        </nav>
+        </nav> -->
       </article>
       <div class="hidden w-1/4 flex-col items-center gap-4 md:flex">
         <p>Compartilhe esse artigo</p>
@@ -59,14 +59,16 @@
 
 <script setup lang="ts">
   import { Categories } from '~/types/Categories.enum';
-  import { FormattedPost } from '~/types/wordPress';
+  import type { FormattedPost } from '~/types/wordPress';
+
   definePageMeta({
     layout: 'blog',
   });
   const route = useRoute();
 
-  const { data } =
-    (await useFetch)<FormattedPost>`/api/posts/${route.params.slug}`;
+  const { data } = await useFetch<FormattedPost>(
+    `/api/posts/${route.params.slug}`,
+  );
 
   const post = computed(() => {
     if (!data.value) return null;
@@ -74,12 +76,12 @@
   });
 
   useHead(() => ({
-    title: post.value.title,
+    title: post.value?.title,
     meta: [
-      { name: 'description', content: post.value.excerpt },
-      { property: 'og:title', content: post.value.title },
-      { property: 'og:description', content: post.value.excerpt },
-      { property: 'og:image', content: post.value.featuredImage },
+      { name: 'description', content: post.value?.excerpt },
+      { property: 'og:title', content: post.value?.title },
+      { property: 'og:description', content: post.value?.excerpt },
+      { property: 'og:image', content: post.value?.featuredImage },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
   }));
