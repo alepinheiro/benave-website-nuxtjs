@@ -1,6 +1,6 @@
 <template>
-  <div class="px-5">
-    <BlogTopBar />
+  <div>
+    <BlogTopBar class="px-2" />
     <main>
       <slot />
     </main>

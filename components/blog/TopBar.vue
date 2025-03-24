@@ -49,9 +49,12 @@
           {{ $t('pages.home.topBar.menu.title') }}
         </h3>
 
-        <div class="w-full">
+        <div class="w-full pt-5">
           <ul v-if="pages" class="flex w-full flex-col text-center">
-            <li v-for="item in pages" key="item" class="flex w-full flex-col">
+            <li
+              v-for="(item, index) in pages"
+              key="item"
+              class="flex w-full flex-col">
               <NuxtLink
                 class="w-full"
                 :to="`/blog/categorias/${item.slug}`"
@@ -59,7 +62,7 @@
                 @click="menuIsOpen = false">
                 {{ item.title }}
               </NuxtLink>
-              <Separator class="my-4 w-full" />
+              <Separator class="my-4 w-full" v-if="index < pages.length - 1" />
             </li>
           </ul>
         </div>
