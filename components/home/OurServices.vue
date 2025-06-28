@@ -94,16 +94,15 @@
               <div class="flex flex-row items-center gap-2">
                 <Icon
                   name="mingcute:check-2-fill"
-                  class="h-4 w-4 shrink-0 bg-gradient-to-t from-primary to-primary-800" />
-
-                <p>
-                  {{
+                  class="h-4 w-4 shrink-0 grow bg-gradient-to-t from-primary to-primary-800" />
+                <MDC
+                  :value="
                     $t(
                       'pages.home.services.electricProjects.services.' +
                         (item + 1),
                     )
-                  }}
-                </p>
+                  ">
+                </MDC>
               </div>
             </li>
           </ul>
@@ -142,18 +141,18 @@
                 name="mingcute:check-2-fill"
                 class="h-4 w-4 shrink-0 bg-gradient-to-t from-primary to-primary-800" />
 
-              <p>
-                {{
+              <MDC
+                :value="
                   $t('pages.home.services.memorialDescription.services.' + item)
-                }}
-              </p>
+                ">
+              </MDC>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div v-if="false" class="service" data-aos="fade-in">
+    <div class="service" data-aos="fade-in">
       <h3 class="md:hidden">
         {{ $t('pages.home.services.eletroCenter.title.prefix') }}
         <b>
@@ -184,11 +183,11 @@
                 name="mingcute:check-2-fill"
                 class="h-4 w-4 shrink-0 bg-gradient-to-t from-primary to-primary-800" />
 
-              <p>
-                {{
+              <MDC
+                :value="
                   $t('pages.home.services.electricProjects.services.' + item)
-                }}
-              </p>
+                ">
+              </MDC>
             </li>
           </ul>
         </div>

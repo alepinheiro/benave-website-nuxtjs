@@ -40,17 +40,14 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio />
-    <template v-if="isDevelopment">
-      <ClientOnly fallbackTag="span">
-        <LazyHomeTheBlog />
-        <template #fallback>
-          <p>Loading posts...</p>
-        </template>
-      </ClientOnly>
-    </template>
+    <ClientOnly fallbackTag="span">
+      <LazyHomeTheBlog />
+      <template #fallback>
+        <p>Loading posts...</p>
+      </template>
+    </ClientOnly>
     <LazyHomeTheTestimonials />
     <LazyHomeCallToAction />
-    <LazyHomeTheFooter />
   </main>
 </template>
 

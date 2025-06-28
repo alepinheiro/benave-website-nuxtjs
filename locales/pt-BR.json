@@ -68,7 +68,7 @@
           "services": {
             "1": "Luminotécnico",
             "2": "Aterramento",
-            "3": "Sistema de Proteção contra Descargas Atmosféricas (SPDA)",
+            "3": "Sistema de Proteção contra  <br> Descargas Atmosféricas (SPDA)",
             "4": "Bandejamento",
             "5": "Diagrama de interligação"
           }
@@ -83,7 +83,7 @@
           "summary": "Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.",
           "services": {
             "1": "Cabos e condutores elétricos",
-            "2": "Sistema de Proteção contra Descargas Atmosféricas (SPDA)",
+            "2": "Sistema de Proteção contra   <br> Descargas Atmosféricas (SPDA)",
             "3": "Sistemas luminotécnicos"
           }
         },

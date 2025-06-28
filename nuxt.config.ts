@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'nuxt-aos',
     'nuxt-vitalizer',
+    '@nuxtjs/mdc',
   ],
   shadcn: {
     /**
