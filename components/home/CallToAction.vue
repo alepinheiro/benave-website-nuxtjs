@@ -7,7 +7,10 @@
           <h2 class="text-center text-2xl font-bold text-white md:text-start">
             {{ $t('pages.home.callToAction.1.title') }}
           </h2>
-          <Button variant="ghost" class="hidden md:flex md:text-white" asChild>
+          <Button
+            variant="link"
+            class="hidden pl-0 md:flex md:text-white"
+            asChild>
             <a
               :href="$t('pages.home.footer.social.links.4.url')"
               target="_blank">
@@ -17,6 +20,9 @@
         </div>
         <Button variant="inverted" class="hidden md:flex" asChild>
           <a :href="$t('pages.home.footer.social.links.1.url')" target="_blank">
+            <Icon
+              :name="$t('pages.home.footer.social.links.' + 1 + '.icon')"
+              class="h-4 w-4 shrink-0" />
             {{ $t('pages.home.callToAction.1.phone') }}
           </a>
         </Button>

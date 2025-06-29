@@ -222,5 +222,5 @@
 </style>
 
 <script setup lang="ts">
-  const electricPanelServices = ['QGBT', 'CCM', 'QTA', 'QTM', 'QDL', 'QDT'];
+  const electricPanelServices = ['QGBT', 'CCM', 'QTA', 'QDL', 'QDT'];
 </script>

@@ -9,7 +9,9 @@
         <swiper-container
           class=""
           :loop="true"
-          :autoplay="true"
+          :autoplay="{
+            delay: 1000 * 15,
+          }"
           :autoHeight="false"
           :initialSlide="2"
           :spaceBetween="5"
