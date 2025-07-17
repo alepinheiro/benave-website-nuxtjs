@@ -1,13 +1,20 @@
 <template>
-  <nav class="sticky top-0 z-50 px-2 pt-2">
+  <nav class="sticky top-0 z-50 pt-2">
     <div
       class="relative z-30 mx-auto h-full w-full max-w-7xl rounded-xl bg-white px-6 py-2 text-primary shadow-md">
       <div class="flex flex-row items-center justify-between">
-        <TheLogo type="full" class="w-fit" width="150" height="48" />
+        <NuxtLink to="/blog/">
+          <TheLogo type="full" class="w-fit" width="150" height="48" />
+        </NuxtLink>
         <div class="z-30 flex flex-row items-center gap-4">
-          <Icon
-            :name="$t('icons.whatsapp')"
-            class="h-8 w-8 shrink-0 md:hidden" />
+          <NuxtLink
+            :to="$t('pages.home.footer.social.links.1.url')"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Icon
+              :name="$t('icons.whatsapp')"
+              class="h-8 w-8 shrink-0 md:hidden" />
+          </NuxtLink>
           <div class="md:hidden">
             <div>
               <Button
@@ -22,21 +29,18 @@
             </div>
           </div>
 
-          <div class="hidden flex-row gap-2 divide-x md:flex">
-            <div
-              v-for="item in Array(topBarItems).keys()"
-              :key="item"
-              class="min-w-24 lg:min-w-48">
-              <div class="flex flex-row items-center justify-center">
+          <ul v-if="pages" class="hidden flex-row gap-2 divide-x md:flex">
+            <li v-for="item in pages" :key="item.id" class="px-5">
+              <div class="flex flex-1 flex-row items-center justify-center">
                 <NuxtLink
-                  :to="'/' + $t(`pages.home.topBar.menu.links.${item + 1}.url`)"
+                  :to="`/blog/categorias/${item.slug}`"
                   :external="true"
                   class="mx-auto">
-                  {{ $t(`pages.home.topBar.menu.links.${item + 1}.label`) }}
+                  {{ item.title }}
                 </NuxtLink>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -50,20 +54,20 @@
           {{ $t('pages.home.topBar.menu.title') }}
         </h3>
 
-        <div class="w-full">
-          <ul class="flex w-full flex-col text-center">
+        <div class="w-full pt-5">
+          <ul v-if="pages" class="flex w-full flex-col text-center">
             <li
-              v-for="item in Array(topBarItems).keys()"
+              v-for="(item, index) in pages"
               key="item"
               class="flex w-full flex-col">
               <NuxtLink
                 class="w-full"
-                :to="$t(`pages.home.topBar.menu.links.${item + 1}.url`)"
+                :to="`/blog/categorias/${item.slug}`"
                 :external="true"
                 @click="menuIsOpen = false">
-                {{ $t(`pages.home.topBar.menu.links.${item + 1}.label`) }}
+                {{ item.title }}
               </NuxtLink>
-              <Separator class="my-4 w-full" />
+              <Separator class="my-4 w-full" v-if="index < pages.length - 1" />
             </li>
           </ul>
         </div>
@@ -71,7 +75,13 @@
     </div>
   </nav>
 </template>
+
 <script setup lang="ts">
   const menuIsOpen = ref(false);
-  const topBarItems = 4;
+  const page = ref(1);
+
+  const { data } = await useFetch(`/api/pages?page=${page.value}`);
+  const pages = computed(() =>
+    !data.value ? null : data.value.pages.toReversed(),
+  );
 </script>

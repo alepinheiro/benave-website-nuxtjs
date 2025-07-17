@@ -23,6 +23,31 @@ export type WPPost = {
   _embedded: WPPostEmbedded;
   jetpack_featured_media_url: string;
 };
+
+export type WPPage = {
+  id: string;
+  slug: string;
+  title: {
+    rendered: string;
+  };
+  content: {
+    rendered: string;
+  };
+  excerpt: {
+    rendered: string;
+  };
+  date: string;
+  date_gmt: string;
+  format: string;
+  modified: string;
+  modified_gmt: string;
+  status: string;
+  sticky: boolean;
+  type: string;
+  link: string;
+  _embedded: WPPostEmbedded;
+  jetpack_featured_media_url: string;
+};
 export type WPMediaDetailSize = {
   file: string;
   height: number;
@@ -101,3 +126,21 @@ export interface WPCategory {
   description: string;
   count: number;
 }
+
+export type FormattedPost = {
+  id: string;
+  slug: string;
+  date: Date;
+  title: string;
+  excerpt: string;
+  createdAt: Date;
+  content?: string;
+  featuredImage: string | undefined;
+  categories: Array<{
+    id: string;
+    link: string;
+    name: string;
+    slug: string;
+    taxonomy: string;
+  }>;
+};

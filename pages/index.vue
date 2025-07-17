@@ -39,18 +39,15 @@
     </div>
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
-    <LazyHomeThePortfolio />
-    <template v-if="isDevelopment">
-      <ClientOnly fallbackTag="span">
-        <LazyHomeTheBlog />
-        <template #fallback>
-          <p>Loading posts...</p>
-        </template>
-      </ClientOnly>
-    </template>
+    <LazyHomeThePortfolio v-if="false" />
+    <ClientOnly fallbackTag="span" v-if="false">
+      <LazyHomeTheBlog />
+      <template #fallback>
+        <p>Loading posts...</p>
+      </template>
+    </ClientOnly>
     <LazyHomeTheTestimonials />
     <LazyHomeCallToAction />
-    <LazyHomeTheFooter />
   </main>
 </template>
 

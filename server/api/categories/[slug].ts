@@ -1,12 +1,13 @@
-import { WPPost, WPCategory } from '~/types/wordPress';
+import { cleanText } from '~/functions/cleanText';
+import type { WPPost, WPCategory, FormattedPost } from '~/types/wordPress';
 
 export default defineEventHandler(async (event) => {
   try {
+    const config = useRuntimeConfig();
     const slug = event.context.params?.slug;
 
-    // Busca a categoria primeiro
     const categories = await $fetch<Array<WPCategory>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/categories`,
+      `${config.public.blogUrl}/categories`,
       {
         params: { slug },
       },
@@ -21,9 +22,8 @@ export default defineEventHandler(async (event) => {
 
     const category = categories[0];
 
-    // Busca posts da categoria
     const posts = await $fetch<Array<WPPost>>(
-      `https://public-api.wordpress.com/wp/v2/sites/alessandropsbra.wordpress.com/posts`,
+      `${config.public.blogUrl}/posts`,
       {
         params: {
           categories: category.id,
@@ -32,14 +32,14 @@ export default defineEventHandler(async (event) => {
       },
     );
 
-    // Formata os posts para o frontend
-    const formattedPosts = posts.map((post) => ({
+    const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
       id: post.id,
-      title: post.title.rendered,
+      date: new Date(post.date),
       slug: post.slug,
-      excerpt: post.excerpt.rendered,
-      date: post.date,
-      featuredImage: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
+      createdAt: new Date(post.date),
+      title: cleanText(post.title.rendered),
+      excerpt: cleanText(post.excerpt.rendered),
+      featuredImage: post.jetpack_featured_media_url,
       categories: post._embedded?.['wp:term']?.[0] || [],
     }));
 

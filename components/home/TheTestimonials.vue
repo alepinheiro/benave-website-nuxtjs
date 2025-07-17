@@ -7,9 +7,11 @@
     <div class="px-5 pt-6 md:mx-auto md:max-w-5xl">
       <ClientOnly>
         <swiper-container
-          class=""
+          class="flex items-center"
           :loop="true"
-          :autoplay="true"
+          :autoplay="{
+            delay: 1000 * 15,
+          }"
           :autoHeight="false"
           :initialSlide="2"
           :spaceBetween="5"
@@ -36,9 +38,9 @@
             scale: 0.85,
           }">
           <swiper-slide
-            v-for="(slide, idx) in [1, 2, 1, 2, 1, 2]"
+            v-for="(slide, idx) in [1, 2, 3, 1, 2, 3, 1, 2, 3]"
             :key="idx"
-            class="mb-16">
+            class="mb-16 self-center">
             <article
               class="flex h-full flex-col justify-center gap-8 rounded-2xl bg-primary p-5 text-white">
               <div class="flex flex-row items-center gap-2">

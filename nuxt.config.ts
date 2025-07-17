@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   runtimeConfig: {
     public: {
-      blogUrl: import.meta.env.BLOG_URL,
+      blogUrl: import.meta.env.NUXT_BLOG_URL,
     },
   },
   devtools: { enabled: true },
@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'nuxt-aos',
     'nuxt-vitalizer',
+    '@nuxtjs/mdc',
   ],
   shadcn: {
     /**
@@ -67,6 +68,17 @@ export default defineNuxtConfig({
         { property: 'og:image:width', content: '1200' },
         { property: 'og:image:height', content: '630' },
       ],
+    },
+  },
+
+  routeRules: {
+    '/blog/categorias/pagina-inicial': {
+      redirect: '/blog/',
+    },
+    '/api/posts/**': {
+      cache: {
+        maxAge: 60 * 60,
+      },
     },
   },
 });

@@ -91,3 +91,18 @@
   }
 }
 
+.wp-block-heading {
+  @apply text-2xl;
+}
+
+.wp-block-list {
+  @apply list-inside list-disc;
+}
+.wp-block-list li {
+  @apply ml-2;
+}
+
+.wp-block-separator {
+  @apply my-4;
+}
+

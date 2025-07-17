@@ -68,7 +68,7 @@
           "services": {
             "1": "Luminotécnico",
             "2": "Aterramento",
-            "3": "Sistema de Proteção contra Descargas Atmosféricas (SPDA)",
+            "3": "Sistema de Proteção contra  <br> Descargas Atmosféricas (SPDA)",
             "4": "Bandejamento",
             "5": "Diagrama de interligação"
           }
@@ -83,7 +83,7 @@
           "summary": "Cálculos detalhados para dimensionamento seguro e eficiente de sistemas e componentes elétricos.",
           "services": {
             "1": "Cabos e condutores elétricos",
-            "2": "Sistema de Proteção contra Descargas Atmosféricas (SPDA)",
+            "2": "Sistema de Proteção contra   <br> Descargas Atmosféricas (SPDA)",
             "3": "Sistemas luminotécnicos"
           }
         },
@@ -154,6 +154,13 @@
           "company": "GB Instalações e manutenções elétricas",
           "job": "Proprietário",
           "quote": "O atendimento e atenção dispensada causou uma ótima impressão, sempre disposto a ajudar e tirar dúvidas, facilitando a execução do projeto, que teve um ótimo resultado. Agregou muito no desenvolvimento e execução do trabalho."
+        },
+        "3": {
+          "img": "/img/testimonial-elievelton.png",
+          "name": "Elivélton",
+          "company": "Drivetech",
+          "job": "Coordenador de Engenharia de projetos",
+          "quote": "Os serviços sempre foram realizados com qualidade e dentro dos prazos acordados, demonstrando comprometimento e atenção às normas vigentes. Um ponto que merece destaque é a análise criteriosa dos projetos, com foco na identificação de possíveis interferências e na construção de soluções em parceria. Sem dúvidas, uma empresa que recomendamos."
         }
       },
       "callToAction": {
@@ -269,10 +276,6 @@
               "url": "#servicos"
             },
             "4": {
-              "label": "Portfólio",
-              "url": "#portifolio"
-            },
-            "5": {
               "label": "Contato",
               "url": "#contato"
             }
