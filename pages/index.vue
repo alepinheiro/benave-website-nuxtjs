@@ -39,8 +39,8 @@
     </div>
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
-    <LazyHomeThePortfolio />
-    <ClientOnly fallbackTag="span">
+    <LazyHomeThePortfolio v-if="false" />
+    <ClientOnly fallbackTag="span" v-if="false">
       <LazyHomeTheBlog />
       <template #fallback>
         <p>Loading posts...</p>

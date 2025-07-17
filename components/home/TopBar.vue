@@ -24,7 +24,7 @@
 
           <div class="hidden flex-row gap-2 divide-x md:flex">
             <div
-              v-for="item in Array(5).keys()"
+              v-for="item in Array(topBarItems).keys()"
               :key="item"
               class="min-w-24 lg:min-w-48">
               <div class="flex flex-row items-center justify-center">
@@ -53,7 +53,7 @@
         <div class="w-full">
           <ul class="flex w-full flex-col text-center">
             <li
-              v-for="item in Array(5).keys()"
+              v-for="item in Array(topBarItems).keys()"
               key="item"
               class="flex w-full flex-col">
               <NuxtLink
@@ -73,4 +73,5 @@
 </template>
 <script setup lang="ts">
   const menuIsOpen = ref(false);
+  const topBarItems = 4;
 </script>
