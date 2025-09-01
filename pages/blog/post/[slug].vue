@@ -19,34 +19,22 @@
               {{ category.name }}
             </NuxtLink>
           </div>
-          <p
-            class="prose prose-lg flex max-w-none flex-col gap-2"
-            v-html="post.excerpt"></p>
-          <hr class="h-1 w-full bg-zinc-200" />
         </header>
 
         <p
-          class="prose prose-lg flex max-w-none flex-col gap-2"
+          class="prose prose-lg flex max-w-none flex-col gap-2 pb-5"
           v-html="post.content"></p>
-
-        <!-- <nav class="mt-8 flex justify-between">
-          <NuxtLink
-            v-if="post.previous"
-            :to="`/blog/${post.previous.slug}`"
-            class="text-blue-600 hover:underline">
-            ← {{ post.previous.title }}
-          </NuxtLink>
-          <NuxtLink
-            v-if="post.next"
-            :to="`/blog/${post.next.slug}`"
-            class="text-blue-600 hover:underline">
-            {{ post.next.title }} →
-          </NuxtLink>
-        </nav> -->
       </article>
+
       <div class="hidden w-1/4 flex-col items-center gap-4 md:flex">
         <p>Compartilhe esse artigo</p>
-        <div class="h-96 w-full bg-zinc-200"></div>
+        <div class="flex flex-wrap items-center justify-center gap-2">
+          <SocialShare
+            v-for="network in ['facebook', 'x', 'linkedin', 'whatsapp']"
+            :key="network"
+            :network="network"
+            :styled="false" />
+        </div>
       </div>
     </div>
 
@@ -86,3 +74,16 @@
     ],
   }));
 </script>
+
+<style>
+  .social-share-button {
+    color: var(--color-brand);
+    border: 2px solid var(--color-brand);
+    padding: 0.5rem 0.75rem;
+  }
+
+  .social-share-button:hover {
+    background-color: var(--color-brand);
+    color: white;
+  }
+</style>

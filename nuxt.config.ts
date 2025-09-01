@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     'nuxt-aos',
     'nuxt-vitalizer',
     '@nuxtjs/mdc',
+    '@stefanobartoletti/nuxt-social-share',
   ],
   shadcn: {
     /**
@@ -81,4 +82,8 @@ export default defineNuxtConfig({
   //     },
   //   },
   // },
+
+  socialShare: {
+    baseUrl: 'https://www.benave.com.br',
+  },
 });

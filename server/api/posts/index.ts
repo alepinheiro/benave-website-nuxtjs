@@ -11,7 +11,6 @@ export default defineEventHandler(async (event) => {
     const page = Number(query.page) || 1;
     const perPage = Number(query.perPage) || 9;
     const categories = Number(query.categories) || undefined;
-    console.log(query);
 
     const posts = await $fetch<Array<WPPost>>(
       `${config.public.blogUrl}/posts`,

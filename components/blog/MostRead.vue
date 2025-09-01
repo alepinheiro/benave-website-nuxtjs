@@ -8,21 +8,26 @@
           <h2 class="text-2xl">Confira as matérias mais lidas do mês.</h2>
         </div>
         <div class="flex flex-col gap-4 md:w-3/4 md:flex-row">
-          <Card v-for="post of posts" :key="post.id" class="w-full">
-            <CardHeader class="p-2">
-              <NuxtImg
-                :src="post.featuredImage"
-                alt="Imagem do post"
-                class="h-48 w-full rounded object-cover" />
-            </CardHeader>
-            <CardContent class="p-4 pt-0">
-              <CardTitle class="line-clamp-3 text-lg">
-                {{ post.title }}
-              </CardTitle>
-              <CardDescription class="mt-auto">
-                {{ $d(post.createdAt) }}
-              </CardDescription>
-            </CardContent>
+          <Card
+            v-for="post of posts"
+            :key="post.id"
+            class="w-full transition-transform hover:scale-105 hover:shadow-lg">
+            <NuxtLink :to="`/blog/post/${post.slug}`">
+              <CardHeader class="p-2">
+                <NuxtImg
+                  :src="post.featuredImage"
+                  alt="Imagem do post"
+                  class="h-48 w-full rounded object-cover" />
+              </CardHeader>
+              <CardContent class="p-4 pt-0">
+                <CardTitle class="line-clamp-3 text-lg">
+                  {{ post.title }}
+                </CardTitle>
+                <CardDescription class="mt-auto">
+                  {{ $d(post.createdAt) }}
+                </CardDescription>
+              </CardContent>
+            </NuxtLink>
           </Card>
         </div>
       </div>
