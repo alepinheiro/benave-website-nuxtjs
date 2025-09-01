@@ -38,13 +38,14 @@
     </div>
   </section>
 </template>
+
 <script lang="ts" setup>
-  import type { FormattedPost } from '~/server/api/posts';
+  import type { FormattedPost } from '~/types/wordPress';
 
   const query = new URLSearchParams({
     page: `${1}`,
     perPage: `${3}`,
-    categories: `${['humor']}`,
+    categories: `${['uncategorized']}`,
   });
 
   const { data } = await useFetch<Array<FormattedPost>>(`/api/posts?${query}`);

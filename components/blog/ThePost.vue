@@ -62,7 +62,8 @@
 
 <script lang="ts" setup>
   import type { PropType } from 'vue';
-  import type { FormattedPost } from '~/server/api/posts';
+  import type { FormattedPost } from '~/types/wordPress';
+
   const props = defineProps({
     post: {
       type: Object as PropType<FormattedPost>,
