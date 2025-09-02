@@ -8,12 +8,14 @@
         </h3>
       </div>
       <div
-        class="mx-auto flex flex-col items-stretch gap-8 md:flex-row md:gap-2">
+        class="mx-auto flex w-full flex-col items-stretch gap-8 md:flex-row md:gap-2">
         <article v-for="post in posts" class="flex flex-1 flex-col gap-2">
-          <NuxtImg
-            :src="post.featuredImage"
-            alt="Imagem do post"
-            class="h-48 w-full rounded object-cover" />
+          <NuxtLink :to="`/blog/post/${post.slug}`">
+            <NuxtImg
+              :src="post.featuredImage"
+              alt="Imagem do post"
+              class="h-48 w-full rounded object-cover" />
+          </NuxtLink>
           <h4 class="line-clamp-2 font-bold">
             {{ post.title }}
           </h4>
@@ -25,9 +27,10 @@
     </div>
   </section>
 </template>
+
 <script lang="ts" setup>
-  import type { FormattedPost } from '~/server/api/posts';
   import type { Categories } from '~/types/Categories.enum';
+  import type { FormattedPost } from '~/types/wordPress';
 
   const props = defineProps<{
     category: Categories;

@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     'nuxt-aos',
     'nuxt-vitalizer',
     '@nuxtjs/mdc',
+    '@stefanobartoletti/nuxt-social-share',
   ],
   shadcn: {
     /**
@@ -71,14 +72,18 @@ export default defineNuxtConfig({
     },
   },
 
-  routeRules: {
-    '/blog/categorias/pagina-inicial': {
-      redirect: '/blog/',
-    },
-    '/api/posts/**': {
-      cache: {
-        maxAge: 60 * 60,
-      },
-    },
+  // routeRules: {
+  //   '/blog/categorias/pagina-inicial': {
+  //     redirect: '/blog/',
+  //   },
+  //   '/api/posts/**': {
+  //     cache: {
+  //       maxAge: 60 * 60,
+  //     },
+  //   },
+  // },
+
+  socialShare: {
+    baseUrl: 'https://www.benave.com.br',
   },
 });

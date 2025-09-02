@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <BlogTopBar /> -->
     <BlogHeroSection />
     <BlogMostRead />
     <div class="bg-gradient-to-b from-zinc-200 to-zinc-300 py-12">

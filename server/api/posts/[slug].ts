@@ -19,22 +19,31 @@ export default defineEventHandler(async (event) => {
     if (!posts.length) {
       throw createError({
         statusCode: 404,
-        statusMessage: 'Post não encontrado',
+        message: 'Post não encontrado',
       });
     }
 
     const [post] = posts;
 
+    let featuredImage: string | undefined;
+
+    if (
+      post.yoast_head_json?.og_image &&
+      post.yoast_head_json.og_image.length > 0
+    ) {
+      featuredImage = post.yoast_head_json.og_image[0].url;
+    }
+
     return {
       id: post.id,
+      featuredImage,
       slug: post.slug,
       date: new Date(post.date),
       createdAt: new Date(post.date),
       content: post.content.rendered,
+      categories: post.categories_detailed,
       title: cleanText(post.title.rendered),
       excerpt: cleanText(post.excerpt.rendered),
-      featuredImage: post.jetpack_featured_media_url,
-      categories: post._embedded?.['wp:term']?.[0] || [],
     } satisfies FormattedPost;
   } catch (error) {
     console.error('Erro ao buscar post do WordPress:', error);

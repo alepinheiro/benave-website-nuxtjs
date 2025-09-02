@@ -77,8 +77,8 @@
 </template>
 
 <script setup lang="ts">
-  const menuIsOpen = ref(false);
-  const page = ref(1);
+  const menuIsOpen = ref<boolean>(false);
+  const page = ref<number>(1);
 
   const { data } = await useFetch(`/api/pages?page=${page.value}`);
   const pages = computed(() =>
