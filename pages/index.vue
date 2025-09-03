@@ -40,7 +40,7 @@
     <LazyHomeAboutUs />
     <LazyHomeOurServices />
     <LazyHomeThePortfolio v-if="false" />
-    <ClientOnly fallbackTag="span" v-if="false">
+    <ClientOnly fallbackTag="span">
       <LazyHomeTheBlog />
       <template #fallback>
         <p>Loading posts...</p>
@@ -51,6 +51,4 @@
   </main>
 </template>
 
-<script setup lang="ts">
-  const isDevelopment = process.env.NODE_ENV === 'development';
-</script>
+<script setup lang="ts"></script>

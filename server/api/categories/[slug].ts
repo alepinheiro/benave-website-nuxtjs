@@ -32,16 +32,30 @@ export default defineEventHandler(async (event) => {
       },
     );
 
-    const formattedPosts: Array<FormattedPost> = posts.map((post) => ({
-      id: post.id,
-      date: new Date(post.date),
-      slug: post.slug,
-      createdAt: new Date(post.date),
-      title: cleanText(post.title.rendered),
-      excerpt: cleanText(post.excerpt.rendered),
-      featuredImage: post.jetpack_featured_media_url,
-      categories: post._embedded?.['wp:term']?.[0] || [],
-    }));
+    const formattedPosts: Array<FormattedPost> = posts.map((post) => {
+      let featuredImage: string | undefined;
+
+      if (
+        post.yoast_head_json?.og_image &&
+        post.yoast_head_json.og_image.length > 0
+      ) {
+        featuredImage = post.yoast_head_json.og_image[0].url;
+      }
+
+      return {
+        id: post.id,
+        featuredImage,
+        slug: post.slug,
+        link: post.link,
+        author: post.author,
+        date: new Date(post.date),
+        createdAt: new Date(post.date),
+        categories: post.categories_detailed,
+        title: cleanText(post.title.rendered),
+        excerpt: cleanText(post.excerpt.rendered),
+        content: post.content ? cleanText(post.content.rendered) : undefined,
+      };
+    });
 
     return {
       category: {

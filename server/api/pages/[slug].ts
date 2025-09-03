@@ -24,15 +24,24 @@ export default defineEventHandler(async (event) => {
 
     const [post] = posts;
 
+    let featuredImage: string | undefined;
+
+    if (
+      post.yoast_head_json?.og_image &&
+      post.yoast_head_json.og_image.length > 0
+    ) {
+      featuredImage = post.yoast_head_json.og_image[0].url;
+    }
+
     return {
       id: post.id,
-      title: post.title.rendered,
+      featuredImage,
       slug: post.slug,
+      date: post.date,
+      title: post.title.rendered,
       content: post.content.rendered,
       excerpt: post.excerpt.rendered,
-      date: post.date,
-      featuredImage: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
-      categories: post._embedded?.['wp:term']?.[0] || [],
+      categories: post.categories_detailed,
     };
   } catch (error) {
     console.error('Erro ao buscar post do WordPress:', error);
