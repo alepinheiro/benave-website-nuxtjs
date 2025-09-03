@@ -3,7 +3,6 @@
     <h1 class="mb-8 text-4xl font-bold">{{ category.name }}</h1>
     <p class="mb-8 text-gray-600">{{ category.description }}</p>
 
-    <!-- Lista de Posts da Categoria -->
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       <BlogThePost
         v-for="post in posts"
@@ -23,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-  import type { FormattedPost } from '~/server/api/posts';
+  import type { FormattedPost } from '~/types/wordPress';
 
   const route = useRoute();
 

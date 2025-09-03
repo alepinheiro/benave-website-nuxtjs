@@ -13,7 +13,6 @@
         <BlogArticlesByCategory :category="Categories['normas-e-seguranca']" />
       </div>
     </div>
-    <!-- <LazyHomeTheFooter /> -->
   </div>
 </template>
 

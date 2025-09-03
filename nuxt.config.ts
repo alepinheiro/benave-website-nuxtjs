@@ -87,3 +87,4 @@ export default defineNuxtConfig({
     baseUrl: 'https://www.benave.com.br',
   },
 });
+

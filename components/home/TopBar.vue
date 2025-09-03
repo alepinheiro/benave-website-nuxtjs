@@ -3,7 +3,7 @@
     <div
       class="relative z-30 mx-auto h-full w-full max-w-7xl rounded-xl bg-white px-6 py-2 text-primary shadow-md">
       <div class="flex flex-row items-center justify-between">
-        <TheLogo type="full" class="w-fit" width="150" height="48" />
+        <TheLogo type="full" class="w-fit shrink-0" width="150" height="48" />
         <div class="z-30 flex flex-row items-center gap-4">
           <Icon
             :name="$t('icons.whatsapp')"
@@ -71,7 +71,8 @@
     </div>
   </nav>
 </template>
+
 <script setup lang="ts">
-  const menuIsOpen = ref(false);
-  const topBarItems = 4;
+  const menuIsOpen = ref<boolean>(false);
+  const topBarItems = 5;
 </script>

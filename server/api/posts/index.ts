@@ -54,7 +54,7 @@ export default defineEventHandler(async (event) => {
     console.error('Erro ao buscar posts do WordPress:', error);
     throw createError({
       statusCode: 500,
-      statusMessage: 'Falha ao buscar posts do WordPress.',
+      message: 'Falha ao buscar posts do WordPress.',
     });
   }
 });

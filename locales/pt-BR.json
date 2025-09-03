@@ -276,6 +276,10 @@
               "url": "#servicos"
             },
             "4": {
+              "label": "Blog",
+              "url": "/blog"
+            },
+            "5": {
               "label": "Contato",
               "url": "#contato"
             }
