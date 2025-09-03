@@ -1,5 +1,9 @@
 <template>
-  <div v-if="post" class="mx-auto max-w-7xl px-2">
+  <div v-if="status === 'pending'">Carregando</div>
+  <div
+    :key="status"
+    v-if="status === 'success' && post"
+    class="mx-auto max-w-7xl px-2">
     <NuxtImg
       :src="post.featuredImage"
       :alt="post.title"
@@ -21,9 +25,11 @@
           </div>
         </header>
 
-        <p
-          class="prose prose-lg flex max-w-none flex-col gap-2 pb-5"
-          v-html="post.content"></p>
+        <ClientOnly>
+          <p
+            class="prose prose-lg flex max-w-none flex-col gap-2 pb-5"
+            v-html="post.content"></p>
+        </ClientOnly>
       </article>
 
       <div class="hidden w-1/4 flex-col items-center gap-4 md:flex">
@@ -54,8 +60,12 @@
   });
   const route = useRoute();
 
-  const { data } = await useFetch<FormattedPost>(
+  const { data, status, error } = await useFetch<FormattedPost>(
     `/api/posts/${route.params.slug}`,
+    {
+      server: true,
+      default: () => null,
+    },
   );
 
   const post = computed(() => {
@@ -63,16 +73,27 @@
     return data.value;
   });
 
-  useHead(() => ({
-    title: post.value?.title,
-    meta: [
-      { name: 'description', content: post.value?.excerpt },
-      { property: 'og:title', content: post.value?.title },
-      { property: 'og:description', content: post.value?.excerpt },
-      { property: 'og:image', content: post.value?.featuredImage },
-      { name: 'twitter:card', content: 'summary_large_image' },
-    ],
-  }));
+  useHead(() => {
+    if (!post.value) return {};
+
+    return {
+      title: post.value.title,
+      meta: [
+        { name: 'description', content: post.value.excerpt },
+        { property: 'og:title', content: post.value.title },
+        { property: 'og:description', content: post.value.excerpt },
+        { property: 'og:image', content: post.value.featuredImage },
+        { name: 'twitter:card', content: 'summary_large_image' },
+      ],
+    };
+  });
+
+  if (error.value) {
+    throw createError({
+      statusCode: error.value.statusCode || 404,
+      statusMessage: error.value.statusMessage || 'Post não encontrado',
+    });
+  }
 </script>
 
 <style>
