@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     'nuxt-vitalizer',
     '@nuxtjs/mdc',
     '@stefanobartoletti/nuxt-social-share',
+    'nuxt-gtag',
   ],
   shadcn: {
     /**
@@ -85,6 +86,10 @@ export default defineNuxtConfig({
 
   socialShare: {
     baseUrl: 'https://www.benave.com.br',
+  },
+
+  gtag: {
+    id: 'G-70QVYVQD94',
   },
 });
 

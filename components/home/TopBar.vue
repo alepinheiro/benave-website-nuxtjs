@@ -5,9 +5,14 @@
       <div class="flex flex-row items-center justify-between">
         <TheLogo type="full" class="w-fit shrink-0" width="150" height="48" />
         <div class="z-30 flex flex-row items-center gap-4">
-          <Icon
-            :name="$t('icons.whatsapp')"
-            class="h-8 w-8 shrink-0 md:hidden" />
+          <NuxtLink
+            :to="$t('pages.home.footer.social.links.1.url')"
+            target="_blank"
+            rel="noopener noreferrer">
+            <Icon
+              :name="$t('icons.whatsapp')"
+              class="h-8 w-8 shrink-0 md:hidden" />
+          </NuxtLink>
           <div class="md:hidden">
             <div>
               <Button
