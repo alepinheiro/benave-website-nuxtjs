@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
     '@stefanobartoletti/nuxt-social-share',
     'nuxt-gtag',
+    '@nuxtjs/robots',
   ],
   shadcn: {
     /**
@@ -92,4 +93,3 @@ export default defineNuxtConfig({
     id: 'G-70QVYVQD94',
   },
 });
-

@@ -16,6 +16,7 @@
     "@nuxt/image": "1.8.1",
     "@nuxtjs/i18n": "9.1.2",
     "@nuxtjs/mdc": "0.17.0",
+    "@nuxtjs/robots": "5.5.5",
     "@nuxtjs/tailwindcss": "6.12.2",
     "@stefanobartoletti/nuxt-social-share": "1.2.3",
     "class-variance-authority": "^0.7.1",

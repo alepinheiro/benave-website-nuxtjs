@@ -34,7 +34,7 @@
               class="min-w-24 lg:min-w-48">
               <div class="flex flex-row items-center justify-center">
                 <NuxtLink
-                  :to="'/' + $t(`pages.home.topBar.menu.links.${item + 1}.url`)"
+                  :to="$t(`pages.home.topBar.menu.links.${item + 1}.url`)"
                   :external="true"
                   class="mx-auto">
                   {{ $t(`pages.home.topBar.menu.links.${item + 1}.label`) }}
