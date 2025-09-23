@@ -15,7 +15,7 @@
     "@nuxt/icon": "1.10.3",
     "@nuxt/image": "1.8.1",
     "@nuxtjs/i18n": "9.1.2",
-    "@nuxtjs/mdc": "0.17.0",
+    "@nuxtjs/mdc": "0.17.2",
     "@nuxtjs/robots": "5.5.5",
     "@nuxtjs/tailwindcss": "6.12.2",
     "@stefanobartoletti/nuxt-social-share": "1.2.3",
